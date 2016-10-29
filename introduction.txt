@@ -1,0 +1,23 @@
+# ./date  							用于smarty视图引擎生成的一些缓存文件以及临时文件等
+
+# ./framework						框架目录，后端编写
+#		./framework/function		存放一些公共的PHP函数，如function C(),function M()等
+#		./framework/libs			存放一些自定义封装的PHP类
+#			./framework/libs/db		存放自定义封装的数据库类
+#			./framework/libs/view	存放smarty引擎的核心类库，一般不用修改
+
+# ./libs							存放PHP的mvc模式文件，后端编写
+		./libs/Controller			存放控制层文件
+		./libs/Model				存放模型层文件
+		./libs/view					存放视图层文件
+		./libs/ORG					存放第三方类文件
+
+
+
+
+# ./img								存放前端的样式，图片， js文件等,前端使用
+#		./img/js					存放js文件
+#		./img/css					存放css文件
+#		./img/images				存放图片
+
+#	./tpls							存放前端的html文件
