@@ -1,11 +1,20 @@
 *{margin:0;padding:0;}
-/*ÁôªÈôÜÊ≥®ÂÜå*/
+a{text-decoration:none;font-family:SimHei;}
+p,span,input{font-family:SimHei;}
+
+/*top*/
+@media screen and (max-width:px) 
+{
+
+}
+
 header .top{
 	width:1200px;
 	height:74px;
 	margin:0 auto;
 	position:relative;
 }
+
 header .top img{
 	width:1200px;
 	height:74px;
@@ -24,10 +33,13 @@ header .top div{
 header .top .loRe .lr:hover{
 	color:#06f;
 }
-/*ÂØºËà™Ê†è*/
+header .top .loRe a{
+	color:#000;
+}
+/*µº∫Ω*/
 header .nav{
 	width:1200px;
-	height:60px;
+	height:50px;
 	background-color:#67bae1;
 	margin:0 auto;
 }
@@ -39,8 +51,8 @@ header nav ul li{
 	list-style:none;
 	float:left;
 	display:block;
-	height:45px;
 	margin-top:10px;
+	height:35px;
 	padding-right:20px;
 	padding-left:20px;
 	padding-top:5px;
@@ -49,7 +61,7 @@ header nav ul span{
 	display:block;
 	float:left;
 	color:#CCC;
-	font-size:25px;
+	font-size:24px;
 	margin-top:15px;
 }
 header nav ul .present{
@@ -59,19 +71,21 @@ header nav ul .present{
 }
 header nav ul li a{
 	text-decoration:none;
-	font-size:25px;
+	font-size:24px;
 	color:#000;
 	font-weight:lighter;
+	font-family:KaiTi;/*…Ë÷√ƒƒ“ª÷÷±»Ωœ∫√ø¥*/
 }
-/*ËΩÆÊí≠Âõæ*/
-#tooltip{
+
+/*¬÷≤•Õº*/
+/*#tooltip{
 	position:absolute;
 	border:1px solid #fff;
 	background:#fff;
 	padding:1px;
 	color:#000;
 	display:none;
-}
+}*/
 .scrollImg{
 	width:1200px;
 	height:450px;
@@ -99,10 +113,11 @@ header nav ul li a{
 .scrollImg .scroll .circle:hover{
 	cursor:pointer;
 }
+
 .scrollImg .scroll .outline span{
 	font-size:21px;
 	color:#d8e2e5;
-	display:none;
+	display:block;
 	position:absolute;
 	z-index:2;
 	left:20px;
@@ -119,6 +134,7 @@ header nav ul li a{
 .scrollImg .scroll ul li{
 	float:left;
 	margin-left:10px;
+	font-size:24px;
 }
 .scrollImg .scroll ul .hover{
 	color:#fff;
@@ -126,35 +142,32 @@ header nav ul li a{
 .scrollImg .scroll ul .out{
 	color:#b3c0cc;
 }
-.scrollImg .scroll .lastPic,
-.scrollImg .scroll .nextPic{
+.scrollImg .scroll .last,
+.scrollImg .scroll .next{
 	font-size:60px;
 	font-weight:bold;
 	position:absolute;
 	z-index:1;
 	top:40%;
-	color:#fff;
+	color:#FFF;
 	width:30px;
 	height:60px;
+	background-color:#CCC;
+	opacity:0.5;
 	line-height:-2px;
 	padding-bottom:7px;
 	display:block;
-}
-.scroll .lastPic:hover,
-.scroll .nextPic:hover{
-	background-color:#CCC;
-	opacity:0.5;
 	cursor:pointer;
 }
-.scrollImg .scroll .lastPic{
+.scrollImg .scroll .last{
 	left:0px;
 	padding-right:10px;
 }
-.scrollImg .scroll .nextPic{
+.scrollImg .scroll .next{
 	right:0px;
 	padding-left:10px;
 }
-/*Á§æËÅîÂÖ¨Âëä*/
+/*π´∏Ê¿∏*/
 .announcement{
 	width:1200px;
 	height:600.4px;
@@ -168,6 +181,7 @@ header nav ul li a{
 	background:-chrome-linear-gradient(#dbdbdb,#fff);
 	background:linear-gradient(#dbdbdb,#fff);
 }
+
 .announcement .column{
 	width:1150px;
 	height:41px;
@@ -212,17 +226,17 @@ header nav ul li a{
 	float:right;
 	padding-right:10px;
 }
-/*ÂÆ£‰º†ÁÖßÁâá*/
-.annpicture{
+/*–˚¥´’’∆¨*/
+.announcement .ann .annpicture{
 	width:1156px;
 	height:222px;
 	border:solid 2px #6CC;
 	border-radius:5px;
 	margin:auto;
-	margin-top:15px;
+	margin-top:60px;
 	background-color:#fff;
 }
-.annpicture .innerDiv{
+.announcement .ann .annpicture .innerDiv{
 	width:1124px;
 	height:194px;
 	margin:9px;
@@ -230,29 +244,33 @@ header nav ul li a{
 	border-radius:5px;
 	padding:5px;
 }
-.annpicture .innerDiv .title{
+.announcement .ann .annpicture .innerDiv .title{
 	width:335px;
 	height:25px;
 	font-weight:bold;
-	font-size:14px;
+	font-size:20px;
 	color:#fff;
 	text-align:center;
 	background-color:#6CC;
 	border-radius:25px;
 	margin:0px auto;	
-	padding-top:6px;
+	padding-top:3px;
 }
-.title .titleSpan{
+.announcement .ann .annpicture .innerDiv .title .titleSpan{
 	margin-left:70px;
 	margin-right:70px;
 }
-.title .last,.title .next{
+.innerDiv .title div
+{display:inline;}
+.innerDiv .title .last,.title .next{
 	cursor:pointer;
 }
 .annpicture .innerDiv .imgs{
 	margin:18px 12px;
 	width:1095px;
 	height:134px;
+	overflow:hidden;
+	position:absolute;
 }
 .annpicture .innerDiv .imgs img{
 	float:left;
@@ -265,4 +283,6 @@ header nav ul li a{
 .footer{
 	text-align:center;
 	font-size:20px;
+	display:block;
+	margin-top:40px;
 }

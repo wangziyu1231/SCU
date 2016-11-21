@@ -51,4 +51,20 @@
 		return $obj;
 	}
 	
+	/**
+	*$message:要弹框的信息，默认为hello
+	*$url: 要跳转的地址
+	*return :none
+	*/
+	function alertGo($message="hello",$url){
+		echo "<script>alert('{$message}');location.href='$url';</script>";
+	}
+	
+	/**
+	*$message:要弹框的信息，默认为hello
+	*return :none
+	*/
+	function alertBack($message="hello"){
+		echo "<script>alert('{$message}');history.back();</script>";
+	} 
 ?>

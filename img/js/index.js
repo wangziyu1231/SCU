@@ -1,107 +1,237 @@
-// JavaScript Document
-//轮播图
-var ii=2;
-var js_img;
-function getScrollImage(var str){
-		var xmlhttp;
-		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
- 			xmlhttp=new XMLHttpRequest();
-  		}
-		else{// code for IE6, IE5
-	  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
- 		} 
-		xmlhttp.onreadystatechange=function(){//为xmlhttp的响应添加处理
-  			if (xmlhttp.readyState==4 && xmlhttp.status==200){
-    			js_img=xmlhttp.responseText;		
-    		}
- 		}
-		xmlhttp.open("POST",'main.php?controller=index&method=getScrollImage',true);
-		//设置请求的方式，请求的服务器文件，是否异步
-		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		//添加HTTp头，只有添加了post方式才能通过send发送数据
-		str="";
-		xmlhttp.send(str);//发送数据
 
-}
-function changload(){
-	
-	img=document.getElementById('pic');
-	setInterval(function(){
-		img.src="./img/images/scrollPicture"+ii+".jpg";
-		ii++;
-		if(ii==5){
-			ii=1;
+var pic_index=0;//存放当前轮播图片的下标
+var pic_length=0;//存放当前轮播图片的总数
+var pic;//存放当前的轮播图
+var scroll_pic;//从后端拿到轮播图的json对象
+
+var circles;//存放圆圈标签
+var spans;//存放轮播图的概要的数组
+
+var timer;//轮播图的计时器
+
+var video;//存放视频的json对象
+var video_length;//视频对象的长度
+var video_index=0;//视频的下标
+
+var aImage;
+var aImage_length;
+var show_index;
+var aImage_index=0;
+
+
+
+
+//一开始就加载的函数
+function load(){
+	getImg();//从后台获取轮播图
+	getVideo();//从后台获取视频
+	getAImage();//从后台获取宣传照片
+	setTimeout(function(){//ajax异步请求需要一定的时间所以延迟一定时间后执行
+		if(video_length>0){
+			var x=document.getElementById('video');
+			x.innerHTML="<embed class='video'  autostart='false' src=../db/index/video/"+video[video_index].videoName+"></embed>";	
 		}
+	},500);
+}
+
+
+//从后台获取轮播图的函数
+function getImg(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();
+  	}
+	else{
+	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+ 	} 
+	xmlhttp.onreadystatechange=function(){
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			scroll_pic=eval(xmlhttp.responseText);
+			pic_length=scroll_pic.length;
+    	}
+ 	}
+	xmlhttp.open("POST",'main.php?controller=index&method=getScrollImage',false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send();
+	if(pic_length>0){//如果有轮播图，则播放轮播图
+			pic=document.getElementById('pic');
+			pic.src="../db/index/images/"+scroll_pic[pic_index].imgName;
+			document.getElementById("outll").innerHTML=""+scroll_pic[pic_index].imgDesc;
+			pic_index++;
+			
+			changImg();
+			change();
+			addEvent();
+	}
+}
+
+//更改图片
+function changPic(){
+	pic=document.getElementById('pic');
+	pic.src="../db/index/images/"+scroll_pic[pic_index].imgName;
+	document.getElementById("outll").innerHTML=""+scroll_pic[pic_index].imgDesc;
+	chang_circle();
+	pic_index++;
+	
+}
+
+
+//为圆圈单击绑定的事件
+function addEvent(){
+	pic=document.getElementById('pic');
+	circles=document.getElementsByClassName("hover");
+	for(var k=0;k<pic_length;k++){
+		circles[k].onclick= function(){
+			clearInterval(timer);
+			pic_index=this.value;
+			pic.src="../db/index/images/"+scroll_pic[pic_index].imgName;
+			document.getElementById("outll").innerHTML=""+scroll_pic[pic_index].imgDesc;
+			chang_circle();
+			pic_index++;
+			changImg();
+		};
+
+	}
+}
+
+
+
+//改当前圈
+function chang_circle(){
+	x=document.getElementsByClassName("hover");//拿到当前的所有圆圈
+	for(var j=0;j<pic_length;j++){
+		if(pic_index==j){
+			x[j].style.color="#fff";
+			
+		}else{
+			x[j].style.color="#b3c0cc";
+		}
+	}
+}
+
+
+//根据后端轮播图数量显示圆圈
+function change(){
+	for(var i=0;i<pic_length-1;i++){
+		var li=document.createElement("li");
+		li.setAttribute("class","hover");
+		li.value=i+1;
+		li.innerHTML="●";
+		li.style.color="#b3c0cc";
+		document.getElementById("circle").appendChild(li);
+	}
+	x=document.getElementsByClassName("hover");//拿到当前的所有圆圈
+	x[0].style.color="#fff";
+	
+}
+
+//执行定时器的函数
+function changImg(){
+	timer=setInterval(function(){
+		if(pic_index>=pic_length)
+			pic_index=0;
+		changPic();
+		
 	},2000);
 }
 
 
+//点击上一张时调用的函数
+function f_lastPic(){
+	clearInterval(timer);//清除计时器
+	pic_index-=2;
+	if(pic_index<0)
+		pic_index=0;
+	pic.src="../db/index/images/"+scroll_pic[pic_index].imgName;
+	document.getElementById("outll").innerHTML=""+scroll_pic[pic_index].imgDesc;
+	chang_circle();
+	pic_index++;
+	changImg();
+	
+}
 
-function changImg(){
-	for(var i=0;i<circle.length;i++){
-		circle[i].index=i;
-		circle[i].onclick=function(){clearInterval(tt);				
-			iNow=this.index;
-			change();
-		}			
-		//当鼠标离开被单击圆圈时，执行setInter（）计时换图片函数
-		circle[i].onmouseout=function(){
-			setInter(0);
+//点击下一张时调用的函数
+function f_nextPic(){
+	clearInterval(timer);//清除计时器
+	if(pic_index>=pic_length)
+		pic_index=pic_length-1;
+	pic.src="../db/index/images/"+scroll_pic[pic_index].imgName;
+	document.getElementById("outll").innerHTML=""+scroll_pic[pic_index].imgDesc;
+	chang_circle();
+	pic_index++;
+	changImg();
+	
+}
+
+
+
+//点击更换下一批宣传图调用的函数
+function next_borad(){
+	var temp=document.getElementById('imgss').getElementsByTagName("img");
+	for(var i=0;i<temp.length;i++){
+		if(aImage_index<aImage_length)
+			temp[i].src="../db/index/images/"+aImage[aImage_index++].imgName;
+		else{
+			aImage_index-=4;
+			temp[i].src="../db/index/images/"+aImage[aImage_index++].imgName;
 		}
 	}
-	last.onclick=function(){clearInterval(tt);
-		for(var i=0;circle[i].className!="hover";i++){}
-			if(i==0){
-				iNow=img.length-1;}	
-			else{
-				iNow=i-1;}
-		change();
-		setInter(0);
-	}
-	next.onclick=function(){clearInterval(tt);
-		for(var i=0;circle[i].className!="hover";i++){}
-			if(i==img.length-1){
-				iNow=0;}	
-			else{
-				iNow=i+1;}
-		change();
-		setInter(0);
-	}
-}		
-function change(){
-	for(var i=0;i<circle.length;i++){
-		circle[i].className="out";
-		spans[i].style.display="none";
-	}
-	circle[iNow].className="hover";
-	spans[iNow].style.display="block";
-	oimg.style.top=-(450*iNow)+"px";
 }
-function setInter(yn){
-	if(yn==1){
-		circle=document.getElementById("circle").getElementsByTagName("li");
-		spans=document.getElementById("spans").getElementsByTagName("span");
-		last=document.getElementById("lastPic");
-		next=document.getElementById("nextPic");
-		tt=null;
-		iNow=0;	
-		yn=0;
-	}
-	clearInterval(tt);	
-	tt=setInterval(function(){			
-		if(iNow==img.length-1){
-			iNow=0;}	
+
+
+//点击更换上一批宣传图调用的函数
+function last_borad(){
+	
+	var temp=document.getElementById('imgss').getElementsByTagName("img");
+	for(var i=0;i<temp.length;i++){
+		if(aImage_index>=0)
+			temp[i].src="../db/index/images/"+aImage[aImage_index--].imgName;
 		else{
-			iNow++;}				
-		change();			  
-	},3000);
-	changImg();
+			aImage_index+=4;
+			temp[i].src="../db/index/images/"+aImage[aImage_index--].imgName;
+		}
+	}
 }
-/*function over(){
-	last.style.display="block";
-	next.style.display="block";
+
+//从后台获取视频调用的函数
+function getVideo(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();
+  	}
+	else{
+	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+ 	} 
+	xmlhttp.onreadystatechange=function(){
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			video=eval(xmlhttp.responseText);
+			video_length=video.length;
+    	}
+ 	}
+	xmlhttp.open("POST",'main.php?controller=index&method=getVideo',true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send();
 }
-function out(){
-	last.style.display="none";
-	next.style.display="none";
-}*/
+
+//从后台获取宣传照片调用的函数
+function getAImage(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		xmlhttp=new XMLHttpRequest();
+  	}
+	else{
+	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+ 	} 
+	xmlhttp.onreadystatechange=function(){
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			aImage=eval(xmlhttp.responseText);
+			aImage_length=aImage.length;
+    	}
+ 	}
+	xmlhttp.open("POST",'main.php?controller=index&method=getAImage',true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send();
+}
+
+
+

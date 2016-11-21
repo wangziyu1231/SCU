@@ -48,7 +48,7 @@
 		*retrun: 执行失败return false,执行SELECT, SHOW, DESCRIBE或 EXPLAIN查询会返回一个mysqli_result 对象，其他查询则返回TRUE。
 		*/
 		function query($sql){
-			$sql=mysqli_real_escape_string(self::$link,$sql);
+			//$sql=mysqli_real_escape_string(self::$link,$sql);
 			$result=mysqli_query(self::$link,$sql);
 			if(!$result){
 				die("执行sql语句出错，错误原因为".mysqli_error(self::$link)."<br/>"."错误的sql语句：".$sql);
@@ -110,7 +110,7 @@
 		*return:执行成功则返回>=0的整数，失败返回false
 		*/
 		function affectedRows(){
-			$temp=mysql_affected_rows();
+			$temp=mysqli_affected_rows(self::$link);
 			if($temp==-1)
 				return false;
 			return $temp;
@@ -222,7 +222,6 @@
 			if(!empty($table)){
 				$sql="delete from `$table`     ";
 				if(!empty($where)){
-					$where=mysqli_real_escape_string(self::$link,$where);
 					$sql.='  where '.$where;
 				}
 				$this->query($sql);

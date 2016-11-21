@@ -8,10 +8,10 @@
 					 'dbname'=>'scu',
 					 'charset'=>'utf8'
 	),
-	'smarty_config'=>array('left_delimiter'=>'<{',
-						   'right_delimiter'=>'}>',
+	'smarty_config'=>array('left_delimiter'=>'{<',
+						   'right_delimiter'=>'>}',
 						   'template_dir'=>'tpls',
-						   'compile_dir'=>'data/temlates_c',
+						   'compile_dir'=>'data/templates_c',
 						   'cache_dir'=>'data/cache'
 	)
 	);

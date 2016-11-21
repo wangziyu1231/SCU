@@ -3,30 +3,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校社联欢迎你</title>
 <link rel="stylesheet" type="text/css" href="./img/css/index.css">
-<script src="./img/js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="./img/css/loginn.css">
+<script type="text/javascript" src="./img/js/index.js"></script>
 <script src="./img/js/jquery.js"></script>
-<script src="./img/js/jqControl.js"></script>
-
+<script src="./img/js/loginn.js"></script>
 </head>
 
-<body onLoad="changload()">
+<body onLoad="load()">
 	<header>
     	<div class="top">
     		<img src="./img/images/head.jpg">
             <div class="loRe">
-        		<span class="lr" onClick="login()">登录</span>
+        		<span class="lr" onclick="login()">登录</span>
         		<span>|</span>
-        		<span class="lr" onClick="register()">注册</span>
+        		<a href="main.php?controller=reg&method=one"><span class="lr" >注册</span></a>
             </div>
         </div>
         <nav>
         	<div class="nav">
            		<ul>
-          	        <li class="present"><a href="./index.html">首页</a></li>
+          	        <li class="present"><a href="./main.php">首页</a></li>
                     <span>|</span>
                		<li><a href="#">关于社联</a></li>
                     <span>|</span>
-              		<li><a href="#">社团信息</a></li>
+              		<li><a href="./main.php?controller=index&method=information">社团信息</a></li>
                     <span>|</span>
                		<li><a href="#">联系我们</a></li>
                     <span>|</span>
@@ -37,25 +37,21 @@
     
     <section>
     	<div class="scrollImg">         
-        	<div class="imgs">       	
-				<img src="./img/images/scrollPicture1.jpg" id="pic">
+        	<div class="imgs" id="imgs">       	
+            <a href="#"  class="tooltip"> 
+        		<img id='pic' src="./img/images/default.jpg">
+            </a>
             </div>
             <div style="clear:both"></div>
             <div class="scroll">
-            	<span class="lastPic" id="lastPic">&lt;</span>
-            	<span class="nextPic" id="nextPic">&gt;</span>
+            	<span  class="last" id="lastPic" onClick="f_lastPic()">&lt;</span>
+            	<span  class="next" id="nextPic" onclick="f_nextPic()">&gt;</span>
                 <div class="opacity"></div>
             	<div class="outline" id="spans">
-                	<span>此处是概要1</span>
-                    <span>此处是概要2</span>
-            		<span>此处是概要3</span>
-                    <span>此处是概要4</span>
+                	<span id="outll"></span>
                 </div>
             	<ul class="circle" id="circle">
-					<li class="hover">●</li>
-					<li class="out">●</li>
-					<li class="out">●</li>
-                	<li class="out">●</li>
+					<li class="hover" value='0' style="color:#b3c0cc">●</li>
 				</ul>
             </div>
             <div style="clear:both;"></div>
@@ -66,26 +62,28 @@
         <div class="announcement">
         	<div class="column">
             	<span>社/联/公/告</span>
+                <img src="">
             </div>
             <div class="annContent">
-                <video src="" class="video" controls></video>
+			<div id="video">
+                <embed  class="video"  src="./img/scuvideo.mp4" autostart="false"></embed></div>
                 <ul>
-                	<li><a href="#">我校召开学分制教务管理系统启动筹备会议
+                	<li><a href="./main.php?controller=index&method=notice">我校召开学分制教务管理系统启动筹备会议
                     	<span>2016-08-27</span></a>
                     </li>
-                    <li><a href="#">我校暑假校园基础设施建设工作显成效
+                    <li><a href="./main.php?controller=index&method=notice">我校暑假校园基础设施建设工作显成效
                     	<span>2016-08-24</span></a>
                     </li>
-            	    <li><a href="#">病魔无情人有情，各界捐款帮助病人
+            	    <li><a href="./main.php?controller=index&method=notice">病魔无情人有情，各界捐款帮助病人
                     	<span>2016-08-22</span></a>
                     </li>
-                    <li><a href="#">校企合作协同育人
+                    <li><a href="./main.php?controller=index&method=notice">校企合作协同育人
                     	<span>2016-08-10</span></a>
                     </li>            	    
-                    <li><a href="#">雍和明：广金要为广州金融发展做贡献
+                    <li><a href="./main.php?controller=index&method=notice">雍和明：广金要为广州金融发展做贡献
                     	<span>2016-08-08</span></a>
                     </li>
-                    <li><a href="#">走进企业深入调研
+                    <li><a href="./main.php?controller=index&method=notice">走进企业深入调研
                     	<span>2016-08-03</span></a>
                     </li>
                     <li style="list-style:none;"><a href="#">
@@ -98,21 +96,22 @@
              	<div class="annpicture">
              		<div class="innerDiv">
                 		<div class="title" id="title">
-                 	   		<span class="lastPic">&lt;&lt;&lt;</span>
+                 	   		<span class="last" onClick="last_borad()">&lt;&lt;&lt;</span>
                     		<span class="titleSpan">宣传照片</span>
-                    		<span class="nextPic">&gt;&gt;&gt;</span>
+                    		<span class="next" onclick="next_borad()">&gt;&gt;&gt;</span>
                     	</div>
-                        <div class="imgs">
-                    		<img class="top3" src="./img/images/img1.jpg">
-                    		<img class="top3" src="./img/images/img2.jpg">
-                    		<img class="top3" src="./img/images/img3.jpg">
-                    		<img src="./img/images/img4.jpg"> 
+                        <div class="imgs" id="imgss">
+                    		<img class="top3" id='borad' src="./img/images/img1.jpg">
+                    		<img class="top3" id='borad' src="./img/images/img2.jpg">
+                    		<img class="top3" id='borad' src="./img/images/img3.jpg">
+                    		<img id='borad' src="./img/images/img4.jpg"> 
                         </div>              
                 	</div>
              	</div>
              </section>
         </div>
     </section>
-    <p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p>
+	<p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p>
+    {<include file="loginn.html">}
 </body>
 </html>

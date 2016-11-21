@@ -22,12 +22,12 @@
 		}
 		
 		//启动程序
-		public static function run($config){
+		public static function run($config,$first,$mFirst){
 			self::$config=$config;
 			self::init_view();
 			self::init_db();
-			self::$controller=isset($_GET['controller'])?$_GET['controller']:"index";
-			self::$method=isset($_GET['method'])?$_GET['method']:"index";
+			self::$controller=isset($_GET['controller'])?$_GET['controller']:$first;
+			self::$method=isset($_GET['method'])?$_GET['method']:$mFirst;
 			$obj=C(self::$controller,self::$method);
 		}
 	}

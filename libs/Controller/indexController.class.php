@@ -8,10 +8,27 @@
 			VIEW::display('index.html');
 		}
 		
-		//测试
-		public function test(){
-			DB::query("select * from `test`");
-			echo DB::getCharset();
+		public function getScrollImage(){
+			$indexmodel=M('index');
+			echo $indexmodel->getScrollImage();
+		}
+		
+		public function getVideo(){
+			$indexmodel=M('index');
+			echo $indexmodel->getVideo();
+		}
+		
+		public function getAImage(){
+			$indexmodel=M('index');
+			echo $indexmodel->getAImage();
+		}
+		
+		public function information(){
+			VIEW::display('information-of-club.html');
+		}
+		
+		public function notice(){
+			VIEW::display('new.html');
 		}
 	}
 ?>
