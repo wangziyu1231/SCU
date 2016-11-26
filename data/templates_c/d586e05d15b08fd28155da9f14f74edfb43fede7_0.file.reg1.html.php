@@ -1,27 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-25 10:59:06
-  from "F:\www\SCU\tpls\login.html" */
+/* Smarty version 3.1.30, created on 2016-11-25 13:28:41
+  from "F:\www\SCU\tpls\main\reg1.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5838197a611fb6_00212650',
+  'unifunc' => 'content_58383c897e7933_26959319',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd7895c437a11e7cec32c0120ff3ef4599cbc57e9' => 
+    'd586e05d15b08fd28155da9f14f74edfb43fede7' => 
     array (
-      0 => 'F:\\www\\SCU\\tpls\\login.html',
-      1 => 1479902297,
+      0 => 'F:\\www\\SCU\\tpls\\main\\reg1.html',
+      1 => 1480080464,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:loginn.html' => 1,
+    'file:main/login.html' => 1,
   ),
 ),false)) {
-function content_5838197a611fb6_00212650 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58383c897e7933_26959319 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,18 +29,18 @@ function content_5838197a611fb6_00212650 (Smarty_Internal_Template $_smarty_tpl)
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>注册界面</title>
-	<link rel="stylesheet" type="text/css" href="./img/css/login.css">
-		<link rel="stylesheet" type="text/css" href="./img/css/loginn.css">
-	<link rel="stylesheet" type="text/css" href="./img/css/login1.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/reg1.css">
+		<link rel="stylesheet" type="text/css" href="./img/css/login.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/reg11.css">
 	<link rel="stylesheet" type="text/css" href="./img/css/headAndNav.css">
 	<?php echo '<script'; ?>
  src="./img/js/jquery.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="./img/js/login.js"><?php echo '</script'; ?>
+ src="./img/js/reg1.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="./img/js/loginn.js"><?php echo '</script'; ?>
+ src="./img/js/login.js"><?php echo '</script'; ?>
 >
 </head>
 <body>
@@ -56,7 +56,7 @@ function content_5838197a611fb6_00212650 (Smarty_Internal_Template $_smarty_tpl)
         <nav>
         	<div class="nav">
            		<ul>
-          	        <li class="present"><a href="./main.php">首页</a></li>
+          	        <li class="present"><a href="main.php">首页</a></li>
                     <span>|</span>
                		<li><a href="#">关于社联</a></li>
                     <span>|</span>
@@ -108,7 +108,7 @@ function content_5838197a611fb6_00212650 (Smarty_Internal_Template $_smarty_tpl)
 			</form>
 		</div>
 	</article>
-	<?php $_smarty_tpl->_subTemplateRender("file:loginn.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+	<?php $_smarty_tpl->_subTemplateRender("file:main/login.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 </body>

@@ -1,0 +1,122 @@
+*{
+			margin :0 auto;
+		}
+		header{
+			width: 100%;
+			background: #99ccff;
+			
+		}
+		header img{
+			margin-left: 4rem;
+		}
+		article .background{
+			width: 100%;
+			height: 40rem;
+		}
+		.leftImg{
+			width: 40%;
+			float: left; 
+			margin-left: 5rem;
+
+		}
+		.rightLogin{
+			width: 20%;
+			height: 30rem;
+			float: left;
+			margin-left: 15rem;
+			margin-top: 3rem;
+			border: 3px solid #99ccff;
+			border-radius: 0.7rem;
+		}
+		.SCUTitle{
+			height: 3rem;
+			background: #eeeeee;
+			border: 0;
+			border-top-right-radius: 0.5rem;
+			border-top-left-radius: 0.5rem;
+			text-align: center;
+		}
+		.circleArrowsLeft{
+			padding-right: 0.6rem;
+			position: relative;
+			top: 0.5rem;
+		}
+		.circleArrowsRight{
+			padding-left: 0.6rem;
+			position: relative;
+			top: 0.5rem;
+
+		}
+		.sTitle{
+			font-size: 1.35rem;
+			margin-top: 0.5rem;
+		}
+		.formIpt{
+			margin: 4rem auto;
+			text-align: center;
+		}
+		.imgUser{
+			background-image: url(../../images/iptUserName.png);
+			background-repeat: no-repeat;
+			width: 16rem;
+			height: 3rem;
+			border: 2px solid #99ccff;
+			border-radius: 0.5rem;
+		}
+		#username{
+			width: 13rem;
+			height: 2.5rem;
+			border: 0;
+			outline: none;
+			
+			font-size: 1.35rem;
+			margin-left: 1.6rem;
+
+			
+		}
+		.imgPwd{
+			background-image: url(../../images/lock.png);
+			background-repeat: no-repeat;
+			background-position: 0.2rem;
+			width: 16rem;
+			height: 3rem;
+			border: 2px solid #99ccff;
+			border-radius: 0.5rem;
+			margin-top: 3rem;
+		}
+		#password{
+			width: 13rem;
+			height: 2.5rem;
+			border: 0;
+			outline: none;
+			font-size: 1.35rem;
+			margin-left: 1.6rem;
+			margin-top: 0.3rem;
+
+			
+		}
+		.tips{
+			display: inline-block;
+			margin-top: 2rem;
+		}
+		.loginBtn{
+			text-align: center;
+			margin-top: -3rem;
+		}
+		.login_btn{
+			width: 12rem;
+			height: 2.5rem;
+			font-size: 1.35rem;
+			background: #c5d9e2;
+			border: 1px solid #c5d9e2;
+			border-radius: 0.5rem;
+			outline: none;
+			color: #666666;
+			margin-top: -5rem;
+		}
+		.picX{
+			position: relative;
+			left: 7rem;
+			top: -1.9rem;
+			outline: none;
+		}

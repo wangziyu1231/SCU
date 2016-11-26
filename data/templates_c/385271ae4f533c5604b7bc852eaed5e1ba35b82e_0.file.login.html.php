@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-25 10:59:06
-  from "F:\www\SCU\tpls\login.html" */
+/* Smarty version 3.1.30, created on 2016-11-23 12:58:26
+  from "F:\xampp\htdocs\SCU\tpls\login.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5838197a611fb6_00212650',
+  'unifunc' => 'content_58358462d018e4_77861684',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd7895c437a11e7cec32c0120ff3ef4599cbc57e9' => 
+    '385271ae4f533c5604b7bc852eaed5e1ba35b82e' => 
     array (
-      0 => 'F:\\www\\SCU\\tpls\\login.html',
+      0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\login.html',
       1 => 1479902297,
       2 => 'file',
     ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:loginn.html' => 1,
   ),
 ),false)) {
-function content_5838197a611fb6_00212650 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58358462d018e4_77861684 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>

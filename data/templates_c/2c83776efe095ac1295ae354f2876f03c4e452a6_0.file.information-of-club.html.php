@@ -1,27 +1,27 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-25 10:58:36
-  from "F:\www\SCU\tpls\information-of-club.html" */
+/* Smarty version 3.1.30, created on 2016-11-25 13:43:47
+  from "F:\www\SCU\tpls\main\information-of-club.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5838195c663903_87881493',
+  'unifunc' => 'content_58384013195201_84183837',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c71c385481d99b17224adbfc96cbe89b231f6584' => 
+    '2c83776efe095ac1295ae354f2876f03c4e452a6' => 
     array (
-      0 => 'F:\\www\\SCU\\tpls\\information-of-club.html',
-      1 => 1479904534,
+      0 => 'F:\\www\\SCU\\tpls\\main\\information-of-club.html',
+      1 => 1480081312,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:loginn.html' => 1,
+    'file:main/login.html' => 1,
   ),
 ),false)) {
-function content_5838195c663903_87881493 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58384013195201_84183837 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,14 +29,14 @@ function content_5838195c663903_87881493 (Smarty_Internal_Template $_smarty_tpl)
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>社团信息</title>
-	<link rel="stylesheet" type="text/css" href="./img/css/information-of-club.css">
-	<link rel="stylesheet" type="text/css" href="./img/css/loginn.css">
-	<link rel="stylesheet" type="text/css" href="./img/css/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/information-of-club.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/login.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
 	<?php echo '<script'; ?>
  src="./img/js/jquery.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="./img/js/loginn.js"><?php echo '</script'; ?>
+ src="./img/js/main/login.js"><?php echo '</script'; ?>
 >
 	
 	<?php echo '<script'; ?>
@@ -266,7 +266,7 @@ function content_5838195c663903_87881493 (Smarty_Internal_Template $_smarty_tpl)
 		</div>
 		</div>
 	</article>
-	<?php $_smarty_tpl->_subTemplateRender("file:loginn.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+	<?php $_smarty_tpl->_subTemplateRender("file:main/login.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 </body>

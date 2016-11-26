@@ -160,11 +160,12 @@
 			if(!empty(self::$result))
 				mysqli_free_result(self::$result);
 		}
+		
 		/**
 		*往表中插入数据
 		*$table:要插入的表
 		*$arr:要字段以及值
-		*return: -1 or 插入的id
+		*return: false or 插入的id
 		*/
 		function insert($table,$arr=array()){
 			if(!empty($arr)){
@@ -192,7 +193,7 @@
 		*$table:要更新的表
 		*$arr:要更新的字段及值
 		*$where:条件
-		*return: -1 or 插入的id
+		*return: false or 影响的行数
 		*/
 		function update($table,$arr=array(),$where=null){
 			if(!empty($table)){
@@ -203,7 +204,7 @@
 				$sql=substr($sql,0,count($sql)-2);
 				$sql.="    ";
 				if(!empty($where)){
-					$where=mysqli_real_escape_string(self::$link,$where);
+					//$where=mysqli_real_escape_string(self::$link,$where);
 					$sql.=' where   '.$where;
 				}
 				$this->query($sql);

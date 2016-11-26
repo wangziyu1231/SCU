@@ -1,0 +1,241 @@
+*{
+	margin: 0 auto;
+}
+header{
+	background: #67bae1;
+}
+header img{
+	margin-left: 4rem;
+}
+.left{
+	width: 20%;
+	float: left;
+}
+.leftUp{
+	height: 20.85rem;
+	background: #fff;
+}
+.leftUpon{
+	height: 39rem;
+	background: #e5e5e5;
+	margin-top: 0.1rem;
+}
+.right{
+	width: 80%;
+	height: 60rem;
+	background: #ebf0f9;
+	float: left;
+	
+}
+.rightIfo{
+	margin-left: 4rem;
+	width: 85%;
+}
+.user{
+	height: 2.25rem;
+	background: #a2d1e7;
+}
+.userAndExit{
+	margin-left: 2rem;
+	font-family: Helvetica;
+	font-size: 1rem;
+	color: #7a8990;
+	width: 9rem;
+	display: inline-block;
+}
+.exit{
+	margin-left: 4rem;
+	margin-top: 0.6rem;
+	border:0;
+	background: #a2d1e7;
+	font-family: Helvetica;
+	font-size: 1rem;
+	outline: none;
+	color: #7a8990;
+}
+.exit:hover{
+	color: #67bae1;
+}
+.manageNav{
+	height: 3rem;
+	background:#e5e5e5;
+	margin-top: 0.1rem; 
+	z-index: 0;
+}
+.triangle-up{
+	position: relative;
+	left: 5.1rem;
+	top: 0.6rem;
+
+}
+.manageNav img{
+	margin-top: 0.4rem;
+	margin-left: 2rem;
+}
+.manageNav a{
+	text-decoration: none;
+	color: #6b6b6b;
+	font-size: 1.4rem;
+}
+.manageNav a:hover{
+	color: #2d2d2d;
+}
+.navName{
+	position: relative;
+	top: -1rem;
+	margin-left: 0.6rem;
+}
+.navNameUpon{
+	margin-left: 6rem;
+	font-size: 1.2rem;
+	cursor:pointe;
+}
+
+.currentPosition{
+	height: 2rem;
+	margin-top: 0.8rem;
+}
+.information{
+	height: 8rem;
+}
+.rightNav{
+	height: 2.5rem;
+	background: #efeded;
+	border: 1px solid #ddd;
+}
+.rightNav ul li{
+	list-style: none;
+	width: 5rem;
+	height: 2rem;
+	float: left;
+	border: 1px solid #ddd;
+	margin-top: 0.45rem;
+	border-bottom: 1.2px solid #fff;
+	margin-left: 1rem;
+	display:block;
+} 
+.rightNav span{
+	display:block;
+	margin-top:0.5rem;
+	margin-left: 0.5rem;
+}
+.userSearched,.seniorSearched{
+	margin-left: 0.5rem;
+	margin-top: 1rem;
+}
+
+.right ul li a{
+	text-decoration: none;
+	margin-left: 0.5rem;
+	position: relative;
+	top: 0.5rem;
+	color: #000;
+}
+.rightNav .userSearch{
+	background: #fff;
+}
+.rightNav .userSearch1{
+	background: #ddd;
+}
+
+.searchContent{
+	width: 99.6%;
+	height: 6rem;
+	border: 1px solid #ddd;
+	border-top: 0;
+	padding-top: 1.5rem;
+	background:#fff;
+}
+.searchContent input{
+	margin-left: 1rem;	
+	outline: none;
+}
+.searchContent span{
+	margin-left: 3rem;
+	
+}
+.searchContent #btn{
+	margin-left: 12rem;
+	width: 4rem;
+	height: 2rem;
+	border: 1px solid #ddd;
+	border-radius: 0.2rem;
+	background: #99ccff;
+	font-size: 1rem;
+}
+.searchContent .us{
+	margin-left: 10rem;
+}
+.cutPages{
+	height: 5rem;
+}
+.cutPages ul{
+	margin-left: 50rem;
+	padding-top: 3.5rem;
+}
+.cutPages ul li{
+	list-style: none;
+	float: left;
+	width: 1.3rem;
+	height: 2rem;
+	background: #fff;
+	border:1px solid #ddd;
+	margin-left: 0.6rem;
+}
+.imgRight{
+	position: relative;
+	left: -1.1rem;
+	top: -0.3rem;
+}
+.imgLeft{
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	transform:rotate(180deg);
+	position: relative;
+	top: -0.6rem;
+	left: -1rem;
+}
+.cutPages ul li span{
+	position: relative;
+	left: -0.1rem;
+}
+.searchTable{
+	height: 35rem;
+	margin-top: 1rem;
+}
+table{
+	white-space: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-align: center;
+	border-collapse: collapse;
+
+}
+table .bgk{
+	background: #efeded;
+}	
+td{
+	border: 1px solid #d1d0d0;
+	border-collapse: collapse;
+	margin: 0;
+	height: 2rem;
+}
+iframe{
+	width: 99.9%;
+	height: 6rem;
+	border: 1px solid #ccc;
+	border-top: 0;
+	overflow-y: scroll;
+	background: #fff;
+	
+}
+.allSBtn{
+	margin-top: 1.5rem;
+	margin-left: 28rem;
+	height: 2rem;
+	font-size: 1.1rem;
+	background: #7ac2e4;
+	border: 1px solid #7ac2e4;
+	border-radius: 0.2rem;	
+}			

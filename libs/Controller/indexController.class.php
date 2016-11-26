@@ -5,7 +5,7 @@
 		
 		//显示首页，为默认
 		public function index(){
-			VIEW::display('index.html');
+			VIEW::display('main/index.html');
 		}
 		
 		public function getScrollImage(){
@@ -24,11 +24,31 @@
 		}
 		
 		public function information(){
-			VIEW::display('information-of-club.html');
+			VIEW::display('./main/information-of-club.html');
 		}
 		
 		public function notice(){
-			VIEW::display('new.html');
+			VIEW::display('./main/new.html');
+		}
+		
+		public function show1(){
+			VIEW::display('./main/orgMessage1.html');
+		}
+		
+		public function show2(){
+			VIEW::display('./main/orgMessage2.html');
+		}
+		
+		public function show3(){
+			VIEW::display('./main/orgMessage3.html');
+		}
+		
+		public function a(){
+			VIEW::display('./main/individualInterface.html');
+		}
+		
+		public function b(){
+			VIEW::display('./main/individualInterface2.html');
 		}
 	}
 ?>

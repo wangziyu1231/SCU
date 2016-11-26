@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>校社联后台管理系统</title>
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/backstageManagement.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/admin/rightReg.css">
+	<script src="./img/js/jquery.js"></script>
+	<script src="./img/js/admin/backstageManagement.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".searchIframe").hide();
+			$(".searchContent").show();
+			$(".userSearch").click(function(){
+				$(".searchContent").show();
+				$(".searchIframe").hide();
+			})
+			$(".seniorSearch").click(function() {
+				$(".searchIframe").show();
+				$(".searchContent").hide();
+			});
+		})
+	</script>
+	
+</head>
+<body>
+		<header><img src="./img/images/backstage.png"></header>
+		<article>
+			<div class="left">
+			<div class="leftUp">
+				<div class="user"><span class="userAndExit">当前社团：{<$sName>}</span><input type="button" name="exit" class="exit" value="退出"></div>
+				<div class="backstageMainNav">
+					<div class="manageNav"><img src="./img/images/circleArrows.png"><span class="navName">管理社团</span></a>
+					</div>
+					<div class="manageNav"><span class="navNameUpon" style=" cursor:pointer" >活动注册</span></a><img class="triangle-up" id="i_rightaReg" src="./img/images/triangle.png"></div>
+					<div class="manageNav"><span class="navNameUpon" id="reg" style=" cursor:pointer">年度注册</span></a><img class="triangle-up" id="i_rightReg"  src="./img/images/triangle.png"></div>
+					<div class="manageNav"><img src="./img/images/circleArrows.png"><span class="navName" style=" cursor:pointer">管理成员</span></a></div>
+					<div class="manageNav"><span class="navNameUpon" id="check" style=" cursor:pointer"  >成员审核</span></a><img class="triangle-up" src="./img/images/triangle.png" id="i_rightCheck" ></div>
+					<div class="manageNav"><span class="navNameUpon" id="rnow" style=" cursor:pointer" >现有成员</span></a><img class="triangle-up" src="./img/images/triangle.png" id="i_rightNow" ></div>
+					
+				</div>
+				</div>
+				<div class="leftUpon"></div>
+			</div>
+			{<include file="admin/backstageManagement_1.html">}
+			{<include file="admin/backstageManagement_2.html">}
+			{<include file="admin/backstageManagement_3.html">}
+			
+		</article>
+</body>
+</html>

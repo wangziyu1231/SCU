@@ -10,11 +10,11 @@
 		}
 		
 		function one(){
-			VIEW::display('login.html');
+			VIEW::display('./main/reg1.html');
 		}
 		
 		function two(){
-			VIEW::display('login2.html');
+			VIEW::display('./main/reg2.html');
 			if($_POST){
 				//注册处理模型
 				$regModel = M('reg') ;
@@ -23,7 +23,7 @@
 		}
 		
 		function three(){
-			VIEW::display('login3.html');
+			VIEW::display('./main/reg3.html');
 			if($_POST){
 				//注册处理模型
 				$regModel = M('reg') ;

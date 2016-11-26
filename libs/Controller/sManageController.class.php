@@ -15,7 +15,7 @@
 	//显示页面
 		//登录页面
 		public function showManage(){
-			VIEW::display('test.html');
+			VIEW::display('backstageManagement.html');
 		}
 		
 		//社团注册审核
@@ -24,7 +24,7 @@
 			$model->get();
 			$arr=json_decode($model->getNext());
 			$arr=is_object($arr)?get_object_vars($arr):$arr;
-			VIEW::assign($arr);
+			VIEW::assign( $arr);
 			VIEW::display('regform.html');
 		}
 		

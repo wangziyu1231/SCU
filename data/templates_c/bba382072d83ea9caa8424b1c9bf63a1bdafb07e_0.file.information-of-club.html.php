@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-25 10:58:36
-  from "F:\www\SCU\tpls\information-of-club.html" */
+/* Smarty version 3.1.30, created on 2016-11-23 13:35:38
+  from "F:\xampp\htdocs\SCU\tpls\information-of-club.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5838195c663903_87881493',
+  'unifunc' => 'content_58358d1a1a4921_74654666',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c71c385481d99b17224adbfc96cbe89b231f6584' => 
+    'bba382072d83ea9caa8424b1c9bf63a1bdafb07e' => 
     array (
-      0 => 'F:\\www\\SCU\\tpls\\information-of-club.html',
+      0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\information-of-club.html',
       1 => 1479904534,
       2 => 'file',
     ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:loginn.html' => 1,
   ),
 ),false)) {
-function content_5838195c663903_87881493 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58358d1a1a4921_74654666 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
