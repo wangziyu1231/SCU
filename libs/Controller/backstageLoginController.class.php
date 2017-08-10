@@ -3,14 +3,15 @@
 	//登录控制器
 	class backstageLoginController{
 		function login(){
+			//登录
 			$loginModel = M('backstageLogin');
-			$loginModel->logincheck();
+			$temp=$loginModel->logincheck();
+			echo $temp;
 		}
 		
 		
-		//测试用
+		
 		function login_view(){
-			
 			VIEW::display('admin/backstageLogin.html');
 		}
 	}

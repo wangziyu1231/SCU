@@ -11,6 +11,7 @@
 			return DB::fetch(DB::FETCH_ONE,DB::FETCH_ASSOC);
 		}
 		
+		//记住密码
 		function rember_login(){
 			$table="userinfo";
 			$json=json_encode(array("success"=>false));
@@ -28,13 +29,15 @@
 					//验证cookie密码
 					if($password == $password_cookie){
 						//登录成功
-						session_start();
+						@session_start();
 						$_SESSION['userinfo']= array(
 							'username'=>$username
 						);
 						$json=json_encode(array("success"=>true));	
-					}
-				}
+					}else
+						$json=json_encode(array("success"=>false));	
+				}else
+					$json=json_encode(array("success"=>false));	
 			}
 			return $json;
 		}
@@ -42,6 +45,7 @@
 		//登录验证
 		function logincheck(){
 			$table = 'userinfo'; 
+			$json=null;
 			if(!empty($_POST)){
 				//获取登录表单post过来的用户名，密码
 				$username = isset($_POST['username']) ? trim($_POST['username']) : '';
@@ -58,7 +62,8 @@
 					$password = md5($user_row['salt'].md5($password));
 					if($password == $user_row['password']){
 						//判断是否勾选了记住密码
-						if(isset($_POST['auto_login'])&&$_POST['auto_login'] == "on"){
+						
+						if(isset($_POST['auto_login'])&&$_POST['auto_login']=='true'){
 							//$ua  user agent信息 用于加密密码
 							$ua = isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'';
 							//加密后的cookie密码
@@ -69,24 +74,24 @@
 							setcookie('username',$username,$cookie_expire);
 							//保存密码
 							setcookie('password',$password_cookie,$cookie_expire);
+							unset($_POST['auto_login']);
 						}
 						//登录成功 页面跳转
-						session_start();
+						@session_start();
 						$_SESSION['userinfo']= array(
 							'username'=>$username
 						);
-						header('Location:./user.php');
-						die;
-						
+						$json=json_encode(array("success"=>1));
+					}else{
+						$json=json_encode(array("success"=>0));
 					}
-					die('用户名不存在或密码错误。');
 				}
 				else{
-					die('用户名不存在或密码错误。');
+					$json=json_encode(array("success"=>-1));	
 				}
 			
 			}
-				
+			return $json;	
 			
 		}
 		
@@ -94,13 +99,16 @@
 		function check_text(){
 			@session_start();
 			if(isset($_SESSION['checkedString'])&&isset($_POST['data'])){
-				if(strtolower($_SESSION['checkedString'])==strtolower($_POST['data']))
+				if($_SESSION['checkedString']==md5(strtolower($_POST['data']))){
 					$json=json_encode(array("success"=>true));
-				else
+				}
+				else{
 					$json=json_encode(array("success"=>false));
+				}
 			}else{
 				$json=json_encode(array("success"=>false));
 			}
+			unset($_SESSION['checkedString']);
 			return $json;
 		}
 		

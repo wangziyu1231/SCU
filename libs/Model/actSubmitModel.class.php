@@ -5,15 +5,22 @@
 		
 		function submit(){
 			if(!empty($_POST)){
-				$table = 'activity_apply';
-				DB::insert($table,$_POST);
-				die('提交成功 请等待审核');
+                $table = 'activity_apply';
+				if(DB::insert($table,$_POST,"ssssssssss")){
+					return true;
+				}else{
+					return false;
+				}
+				
 			}
 			else{
-				die('提交失败');
+				return false;
 			}
 		}
-		
+
+
+
+
 		
 	}
 ?>

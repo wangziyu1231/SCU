@@ -1,39 +1,104 @@
 <?php
 	class socManageModel{
-		
+		//社团管理模型类 包含了社团成员的删除和审核方法
+
+		private $table;
+		private $sum;
+		private $success;
+		private $fail;
+
+		/**
+		  *init()
+		  *初始化属性值
+		  */
+
+		function init(){
+			$this->table ='user_sno';
+			$this->sum=0;
+			$this->success =0;
+			$this->fail	=0;
+		}
+		/*
+		 *del()
+		 *$smNO 要删除的社团成员id
+		 *return: true or false or "null" 
+		 **/
 		function del(){
 			//获取要删除的社团成员id => smNO
 			if($_POST){
-				$smNO = $_POST['smNO'];
-				die($smNO);
-				//sql
-				$table = 'society_member';
-				$value = $smNO;
-				if($this->fetch($value,$table,1)!="null"){
-					$where ="`smNO`=".$value;
-					if(DB::del($table,$where)){
-						alertBack("删除成功");
+				$smNO =isset($_POST['smNO'])?$_POST['smNO']:"";
+				$this->init();
+				foreach ($smNO as $key => $arr_value) {
+					$this->sum = $key+1;
+					$value = $arr_value;
+					if($this->fetch($value,$this->table,1)!="null"){
+						$where = "`username` = ".$arr_value;
+						//执行删除并存储结果
+						$del_result = DB::del($this->table,$where);
+						if($del_result){
+							$this->success+=1;
+						}
+						else{
+							$this->fail+=1;
+						}
 					}
-						
-				}	
+					else{
+						$this->fail+=1;
+					}
+				}
+				$result = array(
+					'提交:'=>$this->sum,
+					'成功:'=>$this->success,
+					'失败:'=>$this->fail); 
+				return $result;
 			}
 			else{
-				alertBack("该社团成员信息不存在或已删除");
+				$result = 'null';
+				return $result;
 			}
 			
 		}
 		
-		//审核提交
+		/*
+		 *review()
+		 *$smNO 要删除的社团成员id
+		 *return: true or false or "null" 
+		 **/
+		 //审核提交
 		function review(){
 			//获取要审核的社团成员id => smNO
-			$smNO = isset($_GET['smNO']) ? intval($_GET['smNO']) : 0;
-			//sql
-			$table = 'society_member';
-			$value = $smNO;
-			if($this->fetch($value,$table,0)!="null"){
-				$where = "`smNO` = ".$smNO;
-				$arr = array('review'	=>'1');
-				DB::update($table,$arr,$where);
+			if($_POST){
+				$smNO =isset($_POST['smNO'])?$_POST['smNO']:"";
+				$this->init();
+				foreach ($smNO as $key => $arr_value) {
+					$this->sum = $key+1;
+					$value = $arr_value;
+					if($this->fetch($value,$this->table,0)!="null"){
+						$where = "`username` = ".$arr_value;
+						$arr = array('review'	=>'1');
+						//执行update并储存结果
+						$review_result = DB::update($this->table,$arr,"s",$where);
+						if($review_result){
+							$this->success+=1;
+						}
+						else{
+							$this->fail+=1;
+						}
+					}
+					else{
+						$this->fail+=1;
+					}
+				}
+				$result = array(
+					'提交:'=>$this->sum,
+					'成功:'=>$this->success,
+					'失败:'=>$this->fail); 
+				return $result;
+				
+			}
+			else{
+				$result = 'null';
+				return $result;
 			}
 		}
 		
@@ -41,7 +106,7 @@
 		
 		function fetch($value,$table,$flag){
 			//sql 语句
-			$sql = "select * from ".$table." where `smNO`= ".$value;
+			$sql = "select * from ".$table." where `username`= ".$value;
 			if($flag==1){
 				$sql.=" and `review` = '1' " ;
 			}else{

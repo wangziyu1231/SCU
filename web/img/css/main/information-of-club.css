@@ -1,0 +1,145 @@
+.informationImage{
+	width: 960px;
+	height: 150px;
+	z-index: 10;
+}
+.informationImage img{
+	width:960px;
+	height:150px;
+}
+.all{
+	width:960px;
+	height:350px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.blue{
+	width:240px;
+	height:390px;
+	position:relative;
+	top: -2.5rem;
+	float: left;
+}
+.blue .span{
+	width:214px;
+	height:54px;
+	padding-top:20px;
+	padding-left:26px;
+	background: #6666ff;
+}
+.blue .span span{
+	font-size:28px;
+	color:#fff;
+}
+.grey{
+	width:214px;
+	height:320px;
+	position: relative;
+	border-left:solid 26px #66f;
+}
+.clubNav,.arrows{
+	position: relative;
+	height:266px;
+	float:left;
+	background-color: #efefef;
+}
+.clubNav{
+	width:174px;
+}
+.arrows{
+	width:40px;
+}
+.left-nav li{
+	list-style: none;
+	height:65px;
+	text-align: center;
+	line-height:3.5;
+	font-size:1.2rem;
+	cursor:pointer;
+	border-bottom: 0.06rem solid #a5a5a5;
+}
+.left-nav li:hover{
+	color: #00f;
+}
+.arrows1{
+	height: 22.125rem;
+}
+.arrows li{
+	list-style: none;
+	height:65px;
+}
+.b1{
+	border-left: 0.06rem solid #a5a5a5;
+	border-bottom: 0.06rem solid #a5a5a5;
+}
+.imgArrows{
+	margin-top: 1.2rem;
+}
+.informationImage{
+	text-align: center;
+}
+
+.content{
+	width:680px;
+	height:22rem;
+	float: left;
+	margin-left: 0.8rem;
+}
+.searchDiv{
+	width: 12rem;
+	height: 1.7rem;
+	border-radius:0.5rem;
+	float:right;
+	margin-right:1rem;
+	border:0.05rem solid #a5a5a5;
+	border-radius: 0.5rem;
+	padding:0.05rem 0.5rem;
+
+}
+#search{
+	width: 10.5rem;
+	height: 1.7rem;
+	border:0;
+	outline: none;
+	font-size: 1rem;
+	display: block;
+	float: left;
+}
+.btn{
+	width:1.5rem;
+	height:1.5rem;
+	border:0;
+	background:url(../../images/search.png) no-repeat;
+	-webkit-background-size:20px 20px;
+	background-size:20px 20px;
+	background-position:0.3rem 0.2rem;
+	outline:none;
+	cursor: pointer;
+}
+.title{
+	width:680px;
+	height: 2.3rem;
+	margin-top:0.5rem;
+}
+.titleS{
+	font-size: 1.3rem;
+	color: #6666ff;
+	line-height:1.6;
+}
+.clubContent td {
+	width: 23rem;
+	height: 2.2rem;
+	font-size: 1rem;
+	color: #595969;
+}
+
+.clubContent a{
+	text-decoration: none;
+	color: #000;
+}
+.clubContent a:hover{
+	color: #acbbca;
+}
+#s2,#s3,#s1{
+	display:none;
+}

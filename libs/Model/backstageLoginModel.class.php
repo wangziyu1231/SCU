@@ -10,80 +10,74 @@
 			//fetch得到结果集 $yn判断结果集是否为空 
 			return DB::fetch(DB::FETCH_ONE,DB::FETCH_ASSOC);
 		}
-		
-		function logincheck(){
-			$table = 'societyinfo'; 
+
+		//记住密码
+		function rember_login(){
+			$table="societyinfo";
+			$json=json_encode(array("success"=>false));
 			//判断cookie是否保存信息
-			if(isset($_COOKIE['username'])&&isset($_COOKIE['password'])){
-				$username = $_COOKIE['susername'];
-				$password = $_COOKIE['spassword'];
+			if(isset($_COOKIE['admin_username'])&&isset($_COOKIE['admin_password'])){
+				$username = $_COOKIE['admin_username'];
+				$password = $_COOKIE['admin_password'];
+				// $sql = "select `username`,`password`,`salt` from ".$table." where `username`=".$username;
 				$user_row= $this->fetch($username,$table);
 				if($user_row!="null"){
 					//计算cookie密码
 					$user_row =json_decode($user_row,true);
 					$ua = isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'';
-					$password_cookie = md5($user_row['spassword']).md5($ua.$user_row['ssalt']);
+					$password_cookie = md5($user_row['password']).md5($user_row['salt']);
 					//验证cookie密码
 					if($password == $password_cookie){
 						//登录成功
-						session_start();
+						@session_start();
 						$_SESSION['societyinfo']= array(
-							'username'=>$username
+							'admin_username'=>$username
 						);
-						alertGo("登录成功",'admin.php?controller=socmem&method=socMember');
-						die;	
-					}
-				}
-				die('登录状态已失效，请重新登录。');
-				
+						$json=json_encode(array("success"=>true));	
+					}else
+						$json=json_encode(array("success"=>false));	
+				}else
+					$json=json_encode(array("success"=>false));	
 			}
-			
-			else if(!empty($_POST)){
-			
+			return $json;
+		}
+		
+		function logincheck(){
+			$table = 'societyinfo';
+			if(!empty($_POST)){
 				//获取post的用户名密码
-				$username = isset($_POST['username']) ? trim($_POST['username']) : '';
-				$password = isset($_POST['password']) ? $_POST['password'] : '';
+				$username = isset($_POST['username_a']) ? trim($_POST['username_a']) : '';
+				$password = isset($_POST['password_a']) ? $_POST['password_a'] : '';
 				
 				$user_row= $this->fetch($username,$table);
 				$yn = ($user_row=="null");
 				$user_row=json_decode($user_row,true);
 				
-				// echo $yn;
 				if(!$yn){
 				//用户存在
 					//判断密码是否正确
 					$password = md5($user_row['ssalt'].md5($password));
 					if($password == $user_row['spassword']){
-						//判断是否勾选了记住密码
-						if(isset($_POST['auto_login'])&&$_POST['auto_login'] == "on"){
-							//$ua  user agent信息 用于加密密码
-							$ua = isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'';
-							//加密后的cookie密码
-							$password_cookie = md5($user_row['spassword']).md5($ua.$user_row['ssalt']);
-							//保存期限 此处为一个月
-							$cookie_expire = time()+ 2592000;
-							//保存用户名
-							setcookie('username',$username,$cookie_expire);
-							//保存密码
-							setcookie('password',$password_cookie,$cookie_expire);
-						}
-						//登录成功 页面跳转
 						@session_start();
 						$_SESSION['societyinfo']= array(
-							'username'=>$username
+							'admin_username'=>$username
 						);
-						// header('Location:admin.php?controller=socmem&method=test');
-						alertGo("登录成功",'admin.php?controller=socmem&method=socMember');
+						return json_encode(array("success"=>1));
 						
 						
 					}
+					else{
+					
+						return json_encode(array("success"=>0));
+					}
 				}
 				else{
-					die('用户名不存在或密码错误。');
+					
+					return json_encode(array("success"=>-1));
 				}
 			
 			}
-				
+			return json_encode(array("success"=>-1));	
 			
 		}
 	}

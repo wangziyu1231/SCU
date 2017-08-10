@@ -1,0 +1,84 @@
+.rightReg{
+	width: 80%;
+	height: 60rem;
+	background: #eeeced;
+	float: left;
+}
+.regForm{
+	width: 85%;
+	margin-left: 4rem;
+}
+.formIformation{
+
+	margin-top: 1rem;
+}
+.formIformation .text span{
+	width: 8rem;
+	height: 2rem;
+	margin-left: 2rem;
+	display:inline-block;
+	text-align: center;
+	margin-top: 1rem;
+	color:#666; 
+	font-size: 1.25rem;
+}
+.rightSpan{
+	padding-left: 2rem;
+}
+.formIformation .text input{
+	height: 1.3rem;
+	width: 20%;
+	max-width: 25%;
+	outline: none;
+	font-size: 1.2rem;
+
+}
+.textareas{
+	position: relative;
+	top: -1.8rem;
+	color:#666; 
+	font-size: 1.25rem;
+	margin-left: 3rem;
+
+}
+.formIformation textarea{
+	margin-top: 1rem;
+	width: 65%;
+	height:4rem;
+	margin-left: 2rem;
+	max-height: 20rem;
+	overflow-y: none;
+	overflow-x: none;
+	outline: none;
+	font-size: 1rem;
+}
+.notice{
+	width: 70%;
+	margin-top: 0.8rem;
+	margin-left: 6rem;
+	color: #a2a5a9;
+}
+.submit{
+	width: 6rem;
+	height: 2.5rem;
+	outline: none;
+	background: #96d0eb;
+	margin-top: 2rem;
+	margin-left: 25rem;
+	font-size: 1.25rem;
+	border:0;
+}
+.submit:active{
+	background: #52a9d1;
+}
+.yesOrNo{
+	margin-top: 2rem;
+	color:#666; 
+	font-size: 1.25rem; 
+	margin-left: 2.5rem;
+}
+input .radio{
+	width: 2rem;
+
+}
+	

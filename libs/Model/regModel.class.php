@@ -3,23 +3,18 @@
 	//注册模型
 	class regModel{
 		function usercheck(){
-			//验证用户名存在与否
-			$username=isset($_POST['username'])?$_POST['username']:"";//将post得到的username给temp
-			//sql 语句
-			$sql = "select `username` from `userinfo` where `username` = ".$username;			
-			//先执行查询
+			$username=isset($_POST['username'])?$_POST['username']:"";//将post得到的username给$username
+			
+			$sql = "select `username` from `userinfo` where `username` = '$username'";			
+			
 			DB::query($sql);
-			//$yn存储fetch结果集的结果 
-			// $yn = DB::fetch(DB::FETCH_ONE,DB::FETCH_ASSOC);
-			//测试fetch 结果
-			$yn = (DB::fetch(DB::FETCH_ONE,DB::FETCH_ASSOC)=="null");
-			// echo $yn;
-			if(!$yn){
-			//用户名已存在
-				echo 'true';
+			$arr=DB::fetch(DB::FETCH_ALL,DB::FETCH_ASSOC);
+			$arr=json_decode($arr);
+			if(empty($arr)){
+				return json_encode(array('success'=>true));
 			}
 			else{
-				echo 'false';
+				return json_encode(array('success'=>false));
 			}
 		}
 		
@@ -28,7 +23,7 @@
 			$table = 'userinfo';
 			//启动session的初始化
 			@session_start();
-			/*	login1
+			/*	reg1
 				用户名
 				密码
 				email
@@ -51,7 +46,7 @@
 					);			
 				}
 			}	
-			/*	login2
+			/*	reg2
 				姓名
 				系别
 				专业
@@ -76,15 +71,25 @@
 						'wechat'=>$wechat
 					);		
 					$reginfo = array_merge($_SESSION,$arr);
+					if(isset($reginfo['checkedString'])){
+						unset($reginfo['checkedString']);
+					}
+					if(isset($reginfo['contact_checkedString'])){
+						unset($reginfo['contact_checkedString']);
+					}
 				}
 				// insert 导入数据库
 				if(isset($reginfo['username'])){
 					DB::insert($table,$reginfo);
+					$username_temp = $_SESSION['username'];
 					$_SESSION =array();
 					session_destroy();
-					//注册完成1.2s 跳转到审核完成界面 此处测试 暂时转到首页
-					header("refresh:1.2;url=./main.php");
+					@session_start();
+					$_SESSION['userinfo']['username']= $username_temp;
+					return true;
 				}	
+				else
+					return false;
 			}
 				
 		}

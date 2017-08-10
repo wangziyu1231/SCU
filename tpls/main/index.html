@@ -1,57 +1,108 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校社联欢迎你</title>
+<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
 <link rel="stylesheet" type="text/css" href="./img/css/main/index.css">
 <link rel="stylesheet" type="text/css" href="./img/css/main/login.css">
 <script type="text/javascript" src="./img/js/main/index.js"></script>
 <script src="./img/js/jquery.js"></script>
 <script src="./img/js/main/login.js"></script>
+<script type="text/javascript">
+			var flag=false;
+			$(".nextAlert").hide();
+            $(".hvr").mouseover(function(){
+				$(".nextAlert").show();
+				flag=true;
+			})
+			$(".nextAlert").mouseout(function(){
+				if(flag)
+					$(".nextAlert").hide();
+			})
+			$(".nextAlert").mouseover(function(){
+				if(flag)
+					$(".nextAlert").show();
+			});
+			</script>
 </head>
 
 <body onLoad="load()">
-	<header>
-    	<div class="top">
-    		<img src="./img/images/head.jpg">
+    <header>
+        <div class="top">
+            <img src="./img/images/head1.png">
             <div class="loRe">
-        		<span class="lr" onclick="login()">登录</span>
+				{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}
         		<span>|</span>
-        		<a href="main.php?controller=reg&method=one"><span class="lr" >注册</span></a>
+				{<$reg|default:"<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></ a>">}
             </div>
         </div>
+		<div class="nextAlert" style="display:none">
+            <a href="main.php?controller=login&method=showPI2">个人信息</a><hr>
+            <a href="main.php?controller=login&method=logout">退出</a>
+        </div>
         <nav>
-        	<div class="nav">
-           		<ul>
-          	        <li class="present"><a href="./main.php">首页</a></li>
-                    <span>|</span>
-               		<li><a href="#">关于社联</a></li>
-                    <span>|</span>
-              		<li><a href="./main.php?controller=index&method=information">社团信息</a></li>
-                    <span>|</span>
-               		<li><a href="#">联系我们</a></li>
-                    <span>|</span>
-            	</ul>
-        	</div>
+            <div class="nav">
+                <ul>
+                    <li class="present"><a href="main.php">首页</a></li>
+                    <li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
+                    <!-- <span>|</span> -->
+                    <li><a href="main.php?controller=index&method=information">社团信息</a></li>
+                    <!-- <span>|</span> -->
+                    <li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
+                    <!-- <span>|</span> -->
+                </ul>
+            </div>
         </nav>
     </header>
     
     <section>
-    	<div class="scrollImg">         
-        	<div class="imgs" id="imgs">       	
-            <a href="#"  class="tooltip"> 
-        		<img id='pic' src="./img/images/default.jpg">
-            </a>
-            </div>
+    	<div class="scrollImg" id="scrollImg">
+			{<foreach $arr|default:null as $k=>$v>}
+				{<if $k==0>}
+				<div class="imgs" id="imgs" style="display:block">
+				{<else>}
+				<div class="imgs" id="imgs" style="display:none">
+				{</if>}
+					<a href="#"  class="tooltip"> 
+						<img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="../db/activity/{<$v->aImg>}">
+					</a>
+				</div>
+			{</foreach>}
+			
+			{<if $arr|default:null==null>}
+				<div class="imgs" id="imgs">       	
+				<a href="#"  class="tooltip"> 
+					<img id='pic' src="./img/images/default.jpg">
+				</a>
+				</div>
+			{</if>}
+			
             <div style="clear:both"></div>
             <div class="scroll">
-            	<span  class="last" id="lastPic" onClick="f_lastPic()">&lt;</span>
+            	{<if $arr|default:null!=null>}
+				<span  class="last" id="lastPic" onClick="f_lastPic()">&lt;</span>
             	<span  class="next" id="nextPic" onclick="f_nextPic()">&gt;</span>
+				{</if>}
                 <div class="opacity"></div>
-            	<div class="outline" id="spans">
-                	<span id="outll"></span>
-                </div>
+				{<foreach $arr|default:null as $k=>$v>}
+					{<if $k==0>}
+					<div class="outline"  style="display:black">
+					{<else>}
+					<div class="outline"  style="display:none">
+					{</if>}
+						<span id="outll" class="outll">{<$v->aSummary>}</span>
+					</div>
+				{</foreach>}
             	<ul class="circle" id="circle">
-					<li class="hover" value='0' style="color:#b3c0cc">●</li>
+					{<foreach $arr|default:null as $k=>$v>}
+						{<if $k==0>}
+							<li class="hover"  onclick="addEvent({<$k>})" style="color:#fff">●</li>
+						{<else>}
+							<li class="hover" onclick="addEvent({<$k>})" style="color:#b3c0cc">●</li>
+						{</if>}
+
+					{</foreach>}
 				</ul>
             </div>
             <div style="clear:both;"></div>
@@ -62,11 +113,9 @@
         <div class="announcement">
         	<div class="column">
             	<span>社/联/公/告</span>
-                <img src="">
             </div>
             <div class="annContent">
-			<div id="video">
-                <embed  class="video"  src="./img/scuvideo.mp4" autostart="false"></embed></div>
+			<div id="video"><embed  class="video"  src={<$video|default:"../db/index/video/default.mp4">} autostart="false"></embed></div>
                 <ul>
                 	<li><a href="./main.php?controller=index&method=notice">我校召开学分制教务管理系统启动筹备会议
                     	<span>2016-08-27</span></a>
@@ -85,9 +134,6 @@
                     </li>
                     <li><a href="./main.php?controller=index&method=notice">走进企业深入调研
                     	<span>2016-08-03</span></a>
-                    </li>
-                    <li style="list-style:none;"><a href="#">
-                    	<span>更多公告...</span></a>
                     </li>
                 </ul>
              </div>

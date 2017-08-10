@@ -30,6 +30,10 @@
 			
 		}
 		
+		public static function _assign($key,$value){
+			self::$sview->assign($key,$value);
+		}
+		
 		/**
 		*封装了smarty的display方法，不使用smarty的缓存机制
 		*$date：要展示的html文件,默认为空

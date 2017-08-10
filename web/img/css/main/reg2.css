@@ -1,0 +1,40 @@
+.content-div1,
+.content-div2{
+	float: left;
+	width:300px;
+	height:150px;
+	margin-left:-1.1rem;
+}
+input.text{
+		width:200px;
+		height:23px;
+		display: inline-block;	
+		font-size:0.5rem;
+		text-indent: 1em;
+		outline:none;
+}
+input.submitBtn{
+		width: 5rem;
+		height: 2rem;
+		font-size: 1rem;
+		margin-top:1.4rem;
+		margin-left:13rem;
+		color: #000;
+		background-color: #81c0de;
+		border:0;
+		outline:none;
+}
+.submitBtn:hover{
+	background-color: #00f;
+}
+span.tit{
+		font-size:16px;
+		height: 2.2rem;
+}
+.state1{
+	font-size: 8px;
+	color:#c33;
+	width:200px;
+	height:15px;
+	margin-left:63px;
+}

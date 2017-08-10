@@ -4,9 +4,8 @@
 	class regController{
 		
 		function check_user_exist(){
-			//判断用户名是否已存在于DB
-			$regModel = M('reg') ;
-			$regModel->usercheck();
+			$regModel = M('reg');
+			echo $regModel->usercheck();
 		}
 		
 		function one(){
@@ -14,21 +13,31 @@
 		}
 		
 		function two(){
-			VIEW::display('./main/reg2.html');
 			if($_POST){
+				VIEW::display('./main/reg2.html');
 				//注册处理模型
 				$regModel = M('reg') ;
 				$regModel->getReg();
 			}
+			else
+				header("Location:main.php?controller=reg&method=one");
 		}
 		
 		function three(){
-			VIEW::display('./main/reg3.html');
 			if($_POST){
+				VIEW::display('./main/reg3.html');
 				//注册处理模型
 				$regModel = M('reg') ;
-				$regModel->getReg();
+				$result = $regModel->getReg();
+				if($result){
+					header("refresh:1.2;url=./main.php");
+				}
+				else
+					alertGo('注册失败，未知错误','main.php');
+
 			}
+			else
+				header("Location:main.php?controller=reg&method=one");
 		}
 }
 ?>

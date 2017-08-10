@@ -7,36 +7,56 @@
 	<link rel="stylesheet" type="text/css" href="./img/css/main/individualInterface2.css">
 	<script src="./img/js/jquery.js"></script>
 	<script type="text/javascript">
+	var flag=false;
 		$(function(){
 			$(".resetPwd").click(function(){
 				$(".pwd").show();
 				$("#submit").show();
 				$(".resetPwd").hide();
 			})
-		})
+			$(".nextAlert").hide();
+            $(".hvr").mouseover(function(){
+				$(".nextAlert").show();
+				flag=true;
+			})
+			$(".nextAlert").mouseout(function(){
+				if(flag)
+					$(".nextAlert").hide();
+			})
+			$(".nextAlert").mouseover(function(){
+				if(flag)
+					$(".nextAlert").show();
+			})
+			
+			
+       })
 	</script>
 </head>
-<body onload="load()">
+<body>
 	<header>
     	<div class="top">
     		<img src="./img/images/head1.png">
             <div class="loRe">
-        		<a href=""><span class="lr" >消息<sup>1</sup></span></a>
+        		<a href="main.php?controller=login&method=showPI"><span class="lr" >消息<sup>1</sup></span></a>
         		<span>|</span>
-        		<a href=""><span class="lr" >151543139<div id="tringle"></div></span></a>
+        		<a href=""><span class="lr hvr" >{<$usr|default:"">}<div id="tringle"></div></span></a>
             </div>
+        </div>
+		<div class="nextAlert">
+            <a href="main.php?controller=login&method=showPI2">个人信息</a><hr>
+            <a href="main.php?controller=login&method=logout">退出</a>
         </div>
         <nav>
         	<div class="nav">
            		<ul>
           	        <li class="present"><a href="main.php">首页</a></li>
-                    <span>|</span>
-               		<li><a href="#">关于社联</a></li>
-                    <span>|</span>
-              		<li><a href="./main.php?controller=index&method=information">社团信息</a></li>
-                    <span>|</span>
-               		<li><a href="#">联系我们</a></li>
-                    <span>|</span>
+                   
+               		<li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
+                    
+              		<li><a href="main.php?controller=index&method=information">社团信息</a></li>
+                    
+               		<li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
+                    
             	</ul>
         	</div>
         </nav>
@@ -44,21 +64,47 @@
     <article>
     	<div>
     		<div class="left"><span class="photo">个人资料</span>
-				<input type="text" name="uploadPhoto" class="uploadPhoto">
-				<button class="upload">上传图片</button>
+                <p>现有头像</p>
+                <img name="portrait_now" class="uploadPhoto" src="{<$userinfo['portrait']|default:''>}" onerror="this.src='./img/images/default_portrait/default.jpg'" />
+				<!-- <input type="text" name="uploadPhoto" class="uploadPhoto" src=""> -->
+                <form method="post" enctype="multipart/form-data" action="main.php?controller=uploadPort&method=upload">
+                <P><input name="portrait" type="file"  /></p>
+                <input name="username" type="hidden" value="{<$userinfo['username']|default:null>}">
+                <p><input class="upload" type="submit" value="上传头像"></p>
+                </form>
+                <!-- 
+				<button class="upload">上传图片</button> -->
     		</div>
     		<div class="line"></div>
     		<div class="right">
-	    		<p>姓名：张三</p>
-	    		<p>性别：男</p>
-	    		<span>邮箱：<input type="text" name="email" class="email"><input type="reset"  class="reset" name="reset" value="修改邮箱"></span>
-	    		<p>密码 <input type="text" name="pwd" class="pwd" style="display: none"><input type="reset" name="reset" class="resetPwd"  value="修改密码"><input type="submit" name="submit" id="submit" value="确定" style="display: none;"></p>
-	    		<p>微信:xxxxx</p>
-	    		<p>手机:xxxxxxxxx</p>
+	    		<p>姓名：{<$userinfo['name']|default:" ">}</p>
+	    		<p>性别：{<$userinfo['sex']|default:"男">}</p>
+	    		<span>邮箱：<input type="text" name="email" class="email" value="{<$userinfo['email']|default:null>}"><input type="reset"  class="reset" name="reset" value="修改邮箱"></span>
+	    		<!--
+                <p>密码 <input type="text" name="pwd" class="pwd" style="display: none"><input type="reset" name="reset" class="resetPwd"  value="修改密码"><input type="submit" name="submit" id="submit" value="确定" style="display: none;"></p>
+                -->
+	    		<p>微信：{<$userinfo['wechat']|default:" ">}</p>
+	    		<p>手机：{<$userinfo['tel']|default:" ">}</p>
+
 	    		<p>关注的社团</p>
-	    		<p><a href="">键协</a>&nbsp 	<a href="">出云协会</a></p>
-	    		<p>加入的社团</p>
-	    		<p><a href="">职协</a></p>
+                   <p>&nbsp;&nbsp;
+                {<foreach $concern|default:null as $arr>}
+	    		    <a href="main.php?controller=index&method=show1&sNO={<$arr.sNO>}">{<$arr.sName>}</a>
+                {<foreachelse>}
+                    <a href="">这个人很懒,一个社团都没关注</a>
+                {</foreach>}
+                    </p>
+
+	    	  	<p>加入的社团</p>
+                    <p>&nbsp;&nbsp;
+                {<foreach $society|default:null as $arr>}
+                  <!--   <p>&nbsp;&nbsp;<a href="">职协</a></p> -->
+	    		    <a href="main.php?controller=index&method=show1&sNO={<$arr.sNO>}">{<$arr.sName>}</a>
+                {<foreachelse>}
+                    
+                    <a href="">这个人很懒,一个社团都没加</a>
+                {</foreach>}
+                    </p>
 
     		</div>
     	</div>

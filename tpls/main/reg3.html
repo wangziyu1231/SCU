@@ -18,9 +18,9 @@
     	<div class="top">
     		<img src="./img/images/head1.png">
             <div class="loRe">
-        		<span class="lr" onclick="login()">登录</span>
+        		{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}
         		<span>|</span>
-        		<a href="main.php?controller=reg&method=one"><span class="lr" >注册</span></a>
+				{<$reg|default:"<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></ a>">}
             </div>
         </div>
         <nav>
@@ -28,12 +28,12 @@
            		<ul>
           	        <li class="present"><a href="main.php">首页</a></li>
                     <span>|</span>
-               		<li><a href="#">关于社联</a></li>
-                    <span>|</span>
-              		<li><a href="./main.php?controller=index&method=information">社团信息</a></li>
-                    <span>|</span>
-               		<li><a href="#">联系我们</a></li>
-                    <span>|</span>
+               		<li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
+                    
+              		<li><a href="main.php?controller=index&method=information">社团信息</a></li>
+                   
+               		<li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
+                    
             	</ul>
         	</div>
         </nav>

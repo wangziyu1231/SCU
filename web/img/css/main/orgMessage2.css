@@ -1,0 +1,54 @@
+/*triangle */
+.pre_nav::after{
+	transform:rotate(45deg);
+	content:'';
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:43%;
+	right:-12.5px;
+	box-shadow:5px -5px 10px -2px #999 inset;
+	background-color:#fff;
+	border:0px;
+}
+.canfloat{
+	position:fixed;
+}
+.activity{
+	padding-top:20px;
+	width:760px;
+	float:left;
+}
+.activity span{
+	font-size:19px;
+	border-left:2px solid #39c;
+	color:#39c;
+	padding-left:10px;
+	display:block;
+	line-height:1.5;
+	height:30px;
+}
+.activity .activity_content{
+	margin-left:50px;
+	width:400px;
+	float:left;
+}
+.activity p{
+	margin-top:10px;
+	margin-left:20px;
+	line-height:1.5;
+	padding-bottom:30px;
+	font-size:14px;	
+}
+.activity .activity_img{
+	width:180px;
+	height:130px;
+	float:right;
+	margin-top:10px;
+}
+.activity hr{
+	width:95%;
+	border:0.01rem solid #d0e0e8;
+	display:block;
+	margin-left:50px;
+}

@@ -1,0 +1,85 @@
+.canfloat{
+	position:fixed;
+}
+/*triangle */
+.pre_nav::after{
+	transform:rotate(45deg);
+	content:'';
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:54%;
+	right:-12.5px;
+	box-shadow:5px -5px 10px -2px #999 inset;
+	background-color:#fff;
+	border:0px;	
+}
+.comment_textarea{
+	display:block;
+	margin-left:40px;
+	margin-top:30px;
+	font-size:16px;
+	padding:10px;
+	width:700px;
+	height:60px;
+}
+.submit{
+	width:70px;
+	height:25px;
+	float:right;
+	border:0;
+	background-color:#67bae1;
+	color:#000;
+	margin-right:150px;
+	margin-top:10px;
+	font-size:10px;
+	margin-bottom:20px;
+	cursor:pointer;
+}
+.comment{
+	border-bottom:1px #ccc solid;
+	margin-left:42px;
+	width:722px;
+}
+.comment1{
+	border-top:1px #ccc solid;
+	margin-top:50px;
+}
+.comment img{
+	width:60px;
+	height:49px;
+	float:left;
+	padding-top:6px;
+}	
+.comment .my_name{
+	color:#69F;
+	font-size:16px;
+	display:block;
+	float:left;
+	margin-right:20px;
+}
+.comment .time{
+	color:#ccc;
+	font-size:16px;
+	display:block;
+	margin-bottom:16px;
+}
+.comment .con{
+	font-size:16px;
+	color:#000;
+	width:700px;
+}
+.main .comment .comment_right{
+	width:650px;
+	margin-left:70px;
+	padding-top:6px;
+}
+.comment_a{
+	display:block;
+	font-size:18px;
+	margin-top:20px;
+	color:#000;
+	position:absolute;
+	z-index:3;
+	right:150px;
+}
