@@ -6,53 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
 	<link rel="stylesheet" type="text/css" href="./img/css/main/individualInterface.css">
 	<script src="./img/js/jquery.js"></script>
-	<script type="text/javascript">
-       $(function(){
-			$(".nextAlert").hide();
-            $("#hvr").mouseover(function(){
-				$(".nextAlert").show();
-				flag=true;
-			})
-			$(".nextAlert").mouseout(function(){
-				if(flag)
-					$(".nextAlert").hide();
-			})
-			$(".nextAlert").mouseover(function(){
-				if(flag)
-					$(".nextAlert").show();
-			})
-       })
-    </script>
+	<script src="./img/js/main/main.js"></script>
 </head>
+
 <body>
-	<header>
-    	<div class="top">
-    		<img src="./img/images/head1.png">
-            <div class="loRe">
-        		<a href="main.php?controller=login&method=showPI"><span class="lr" >消息<sup>1</sup></span></a>
-        		<span>|</span>
-        		<a href="main.php?controller=login&method=showPI2"><span class="lr" id="hvr">{<$usr>}<div id="tringle"></div></span></a>
-            </div>
-        </div>
-        <nav>
-        	<div class="nav">
-           		<ul>
-          	        <li class="present"><a href="main.php">首页</a></li>
-                   
-               		<li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
-                  
-              		<li><a href="main.php?controller=index&method=information">社团信息</a></li>
-                   
-               		<li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
-                   
-            	</ul>
-        	</div>
-			<div class="nextAlert">
-				<a href="main.php?controller=login&method=showPI2">个人信息</a><hr>
-				<a href="main.php?controller=login&method=logout">退出</a>
-			</div>
-        </nav>
-    </header>
+    {<include file="main/header.html">}    
+    
+
     <article class="content">
     	<div class="massage">
     		<div class="massage1"><div><span class="dot">.</span><span class="date">11月16日</span></div>

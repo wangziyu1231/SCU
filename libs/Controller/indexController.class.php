@@ -1,6 +1,6 @@
 <?php
 	header('content-type:text/html;charset=utf-8');
-	require_once('/../libs/ORG/checkedImage_contact.php');
+	require_once('/../ORG/checkedImage_contact.php');
 	//首页的控制器
 	class indexController{
 		
@@ -8,12 +8,12 @@
 		public function index(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr hvr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr'  id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			$temp=$this->getVideo();
 			if(!empty($temp))
@@ -28,12 +28,12 @@
 		public function showAboutUs(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			VIEW::display('main/aboutUs.html');
 		}
@@ -45,12 +45,12 @@
 		public function contactUs(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			VIEW::display('main/contactUs.html');
 		}
@@ -73,12 +73,12 @@
 		public function information(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			VIEW::display('main/information-of-club.html');
 		}
@@ -86,12 +86,12 @@
 		public function notice(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			VIEW::display('main/new.html');
 		}
@@ -99,12 +99,12 @@
 		public function show1(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tr ingle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			//获取当前成员加入该社团的状态
 			$isJoin = M('joinSociety');
@@ -115,19 +115,26 @@
 				VIEW::_assign('isJoin','等待审核');
 			else
 				VIEW::_assign('isJoin','加入社团');
-			
+			//获取关注状态
+			$isConcern = M('concernSociety');
+			$result_concern = $isConcern->isConcern();
+			if($result_concern){
+				VIEW::_assign('isConcern','1');
+			}
+			else
+				VIEW::_assign('isConcern','0');
 			VIEW::display('main/orgMessage1.html');
 		}
 		
 		public function show2(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			//获取当前成员加入该社团的状态
 			$isJoin = M('joinSociety');
@@ -138,19 +145,26 @@
 				VIEW::_assign('isJoin','等待审核');
 			else
 				VIEW::_assign('isJoin','加入社团');
-
+			//获取关注状态
+			$isConcern = M('concernSociety');
+			$result_concern = $isConcern->isConcern();
+			if($result_concern){
+				VIEW::_assign('isConcern','1');
+			}
+			else
+				VIEW::_assign('isConcern','0');
 			VIEW::display('main/orgMessage2.html');
 		}
 		
 		public function show3(){
 			@session_start();
 			if(isset($_SESSION['userinfo'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
 			}
 			if(isset($_COOKIE['username'])){
-				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' >{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("login","<a href='main.php?controller=login&method=showPI'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
+				VIEW::_assign("reg","<a href='main.php?controller=login&method=showPI2'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
 			}
 			//获取当前成员加入该社团的状态
 			$isJoin = M('joinSociety');
@@ -161,7 +175,14 @@
 				VIEW::_assign('isJoin','等待审核');
 			else
 				VIEW::_assign('isJoin','加入社团');
-
+			//获取关注状态
+			$isConcern = M('concernSociety');
+			$result_concern = $isConcern->isConcern();
+			if($result_concern){
+				VIEW::_assign('isConcern','1');
+			}
+			else
+				VIEW::_assign('isConcern','0');
 			VIEW::display('main/orgMessage3.html');
 		}
 	}

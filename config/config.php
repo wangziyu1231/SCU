@@ -4,7 +4,7 @@
 					 'host'=>'127.0.0.1',
 					 'port'=>'80',
 					 'user'=>'root',
-					 'password'=>'412531',
+					 'password'=>'',
 					 'dbname'=>'scu',
 					 'charset'=>'utf8'
 	),

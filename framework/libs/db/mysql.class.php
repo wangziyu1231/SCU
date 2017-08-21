@@ -198,7 +198,7 @@
                 array_unshift($v,$type);
                 $sql.='values('.$strv.')';
 				self::$result=$this->query($sql,$v);
-				return $this->insertId();
+				return true;
 			}else{
 				return false;
 			}

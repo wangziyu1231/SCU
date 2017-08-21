@@ -5,57 +5,13 @@
 <title>校社联欢迎你</title>
 <link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
 <link rel="stylesheet" type="text/css" href="./img/css/main/index.css">
-<link rel="stylesheet" type="text/css" href="./img/css/main/login.css">
-<script type="text/javascript" src="./img/js/main/index.js"></script>
 <script src="./img/js/jquery.js"></script>
-<script src="./img/js/main/login.js"></script>
-<script type="text/javascript">
-			var flag=false;
-			$(".nextAlert").hide();
-            $(".hvr").mouseover(function(){
-				$(".nextAlert").show();
-				flag=true;
-			})
-			$(".nextAlert").mouseout(function(){
-				if(flag)
-					$(".nextAlert").hide();
-			})
-			$(".nextAlert").mouseover(function(){
-				if(flag)
-					$(".nextAlert").show();
-			});
-			</script>
+<script src="./img/js/main/index.js"></script>
+<script src="./img/js/main/main.js"></script>
 </head>
 
 <body onLoad="load()">
-    <header>
-        <div class="top">
-            <img src="./img/images/head1.png">
-            <div class="loRe">
-				{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}
-        		<span>|</span>
-				{<$reg|default:"<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></ a>">}
-            </div>
-        </div>
-		<div class="nextAlert" style="display:none">
-            <a href="main.php?controller=login&method=showPI2">个人信息</a><hr>
-            <a href="main.php?controller=login&method=logout">退出</a>
-        </div>
-        <nav>
-            <div class="nav">
-                <ul>
-                    <li class="present"><a href="main.php">首页</a></li>
-                    <li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
-                    <!-- <span>|</span> -->
-                    <li><a href="main.php?controller=index&method=information">社团信息</a></li>
-                    <!-- <span>|</span> -->
-                    <li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
-                    <!-- <span>|</span> -->
-                </ul>
-            </div>
-        </nav>
-    </header>
-    
+    {<include file="main/header.html">}    
     <section>
     	<div class="scrollImg" id="scrollImg">
 			{<foreach $arr|default:null as $k=>$v>}
@@ -110,54 +66,61 @@
         <!--scrollImg end -->
     </section>
     <section>
-        <div class="announcement">
-        	<div class="column">
-            	<span>社/联/公/告</span>
+        <div class="ann">
+    		<div class="title" id="title">
+                <span id="main">热门活动</span
+                ><span id="hot">火热进行</span
+                ><span id="history">历史回顾</span>
             </div>
-            <div class="annContent">
-			<div id="video"><embed  class="video"  src={<$video|default:"../db/index/video/default.mp4">} autostart="false"></embed></div>
-                <ul>
-                	<li><a href="./main.php?controller=index&method=notice">我校召开学分制教务管理系统启动筹备会议
-                    	<span>2016-08-27</span></a>
-                    </li>
-                    <li><a href="./main.php?controller=index&method=notice">我校暑假校园基础设施建设工作显成效
-                    	<span>2016-08-24</span></a>
-                    </li>
-            	    <li><a href="./main.php?controller=index&method=notice">病魔无情人有情，各界捐款帮助病人
-                    	<span>2016-08-22</span></a>
-                    </li>
-                    <li><a href="./main.php?controller=index&method=notice">校企合作协同育人
-                    	<span>2016-08-10</span></a>
-                    </li>            	    
-                    <li><a href="./main.php?controller=index&method=notice">雍和明：广金要为广州金融发展做贡献
-                    	<span>2016-08-08</span></a>
-                    </li>
-                    <li><a href="./main.php?controller=index&method=notice">走进企业深入调研
-                    	<span>2016-08-03</span></a>
-                    </li>
-                </ul>
-             </div>
-             <div style="clear:both;"></div>
-             <section class="ann">
-             	<div class="annpicture">
-             		<div class="innerDiv">
-                		<div class="title" id="title">
-                 	   		<span class="last" onClick="last_borad()">&lt;&lt;&lt;</span>
-                    		<span class="titleSpan">宣传照片</span>
-                    		<span class="next" onclick="next_borad()">&gt;&gt;&gt;</span>
-                    	</div>
-                        <div class="imgs" id="imgss">
-                    		<img class="top3" id='borad' src="./img/images/img1.jpg">
-                    		<img class="top3" id='borad' src="./img/images/img2.jpg">
-                    		<img class="top3" id='borad' src="./img/images/img3.jpg">
-                    		<img id='borad' src="./img/images/img4.jpg"> 
-                        </div>              
-                	</div>
-             	</div>
-             </section>
+            <div id="mode1" class="mode">
+                <div class="mode1" id="mar">
+                  <img class="top3" id='borad' src="./img/images/img1.jpg">
+                  <div class="title">草地音乐节</div>
+                  <div class="content">一次情感的释放,一次灵魂的交流,一次自然与音乐的完美锲合, 无座位 无演员 人人都是舞台重心,满自由 满音量 跟随音乐挥洒热情, 尝试 感受 释放,其实你并不平凡,只是不愿尝试,期待与你遇见, ----再不疯狂我们就老了。</div>
+                </div><div class="mode1" id="mar">
+                  <img class="top3" id='borad' src="./img/images/img2.jpg">
+                  <div class="title">草地音乐节</div>
+                  <div class="content">一次情感的释放,一次灵魂的交流,一次自然与音乐的完美锲合, 无座位 无演员 人人都是舞台重心,满自由 满音量 跟随音乐挥洒热情, 尝试 感受 释放,其实你并不平凡,只是不愿尝试,期待与你遇见, ----再不疯狂我们就老了。</div>
+                </div><div class="mode1" >
+                  <img class="top3" id='borad' src="./img/images/img3.jpg">
+                  <div class="title">草地音乐节</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div>                      
+            </div>
+            <div id="mode2" class="mode">
+                <div class="mode1" id="mar">
+                  <img class="top3" id='borad' src="./img/images/img11.jpg">
+                  <div class="title">草地音乐节2</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div><div class="mode1" id="mar">
+                  <img class="top3" id='borad' src="./img/images/img3.jpg">
+                  <div class="title">草地音乐节</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div><div class="mode1" >
+                  <img class="top3" id='borad' src="./img/images/img2.jpg">
+                  <div class="title">草地音乐节</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div>                      
+            </div>
+            <div id="mode3" class="mode">
+                <div class="mode1" id="mar">
+                  <img class="top3" id='borad' src="./img/images/img4.jpg">
+                  <div class="title">草地音乐节3</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div><div class="mode1" id="mar">
+                  <img class="top3" id='borad' src="./img/images/img10.jpg">
+                  <div class="title">草地音乐节</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div><div class="mode1" >
+                  <img class="top3" id='borad' src="./img/images/img11.jpg">
+                  <div class="title">草地音乐节</div><br/>
+                  <div class="content">在草地上来一场音乐盛宴</div>
+                </div>                      
+            </div>
         </div>
-    </section>
-	<p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p>
+    </section><!-- 
+	<p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p> -->
+    <div class="footer"></div>
     {<include file="main/login.html">}
 </body>
 </html>
