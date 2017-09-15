@@ -20,12 +20,6 @@ $(function(){
 			if(!(telFlag&&wechatFlag&&emailFlag)) return false;
 			// 信息无误,获取并上传信息
 			var jsn = {'username':$("input[name='username']").val(),'tel':newTel,'email':newEmail,'wechat':newWechat};
-			// var t = {
-			// 		username:$("input[name='username']").val(),
-			// 		tel: newTel,
-			// 		email:newEmail,
-			// 		wechat:newWechat
-			// 	};
 
 			$.ajax({ 
 			    type: "POST", 	
@@ -34,10 +28,9 @@ $(function(){
 				async:true,
 				success: function(data){
 					var data=eval("("+data+")");
-					alert(data.success);
 					if(data.success){
-						$(this).text("编辑");
-						$(this).removeClass("finish");
+						$("#edit").text("编辑");
+						$("#edit").removeClass("finish");
 						$(".editable").attr("disabled","disabled");	
 					} else {
 						alert("不符合要求，修改失败");
@@ -57,6 +50,10 @@ $(function(){
 			telFlag=true;
 			emailFlag=true;
 			wechatFlag=true;
+			newTel=$('input[name="tel"]').val();
+			newEmail=$('input[name="email"]').val();
+			newWechat=$('input[name="wechat"]').val();
+			//手机，邮箱，微信号，只要有一个被编辑修改就得上传新值，
 			$(".editable").change(function(){
 				tip=$(this).parent().next().next();
 				tip.css("display","block");

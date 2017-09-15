@@ -20,12 +20,9 @@ input.submitBtn{
 		margin-top:1.4rem;
 		margin-left:13rem;
 		color: #000;
-		background-color: #81c0de;
+		background-color:#cfdcfd;
 		border:0;
 		outline:none;
-}
-.submitBtn:hover{
-	background-color: #00f;
 }
 span.tit{
 		font-size:16px;

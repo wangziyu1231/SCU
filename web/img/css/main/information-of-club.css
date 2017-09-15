@@ -1,14 +1,14 @@
+body{
+	min-width:650px;
+}
 .informationImage{
-	width: 960px;
 	height: 150px;
 	z-index: 10;
 }
 .informationImage img{
-	width:960px;
 	height:150px;
 }
 .all{
-	width:960px;
 	height:350px;
 	margin: 0 auto;
 	background-color: #fff;
@@ -25,7 +25,7 @@
 	height:54px;
 	padding-top:20px;
 	padding-left:26px;
-	background: #6666ff;
+	background: #67BAF2;
 }
 .blue .span span{
 	font-size:28px;
@@ -35,7 +35,7 @@
 	width:214px;
 	height:320px;
 	position: relative;
-	border-left:solid 26px #66f;
+	border-left:solid 26px #67BAF2;
 }
 .clubNav,.arrows{
 	position: relative;
@@ -78,12 +78,9 @@
 .informationImage{
 	text-align: center;
 }
-
 .content{
-	width:680px;
 	height:22rem;
 	float: left;
-	margin-left: 0.8rem;
 }
 .searchDiv{
 	width: 12rem;
@@ -92,9 +89,8 @@
 	float:right;
 	margin-right:1rem;
 	border:0.05rem solid #a5a5a5;
-	border-radius: 0.5rem;
+	border-radius: 0.3rem;
 	padding:0.05rem 0.5rem;
-
 }
 #search{
 	width: 10.5rem;
@@ -117,17 +113,15 @@
 	cursor: pointer;
 }
 .title{
-	width:680px;
 	height: 2.3rem;
 	margin-top:0.5rem;
 }
 .titleS{
 	font-size: 1.3rem;
-	color: #6666ff;
+	color: #4D8DFF;
 	line-height:1.6;
 }
 .clubContent td {
-	width: 23rem;
 	height: 2.2rem;
 	font-size: 1rem;
 	color: #595969;
@@ -142,4 +136,55 @@
 }
 #s2,#s3,#s1{
 	display:none;
+}
+@media (min-width: 961px){
+	.informationImage{
+		width: 960px;
+	}
+	.informationImage img{
+		width: 960px;
+	}
+	.all{
+		width: 960px;
+	}
+	.content{
+		width:680px;
+		margin-left: 0.8rem;
+	}
+	.title{
+		width:680px;
+	}
+	.clubContent td {
+		width:23rem;
+	}
+}
+@media (max-width: 960px){
+	.informationImage{
+		width:100%;
+	}
+	.informationImage img{
+		width:100%;
+	}
+	.all{
+		width:100%;
+		display: flex;
+		flex-direction: flex;
+		-moz-box-orient:horizontal;
+		-webkit-box-orient:horizontal;
+	}
+	.blue,.content{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	.content{
+		flex:1;
+		margin-left: 0.8rem;
+		box-sizing: border-box;
+	}
+	.title{
+		width:100%;
+	}
+	.clubContent td {
+		width:30%;
+	}
 }

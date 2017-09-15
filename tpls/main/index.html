@@ -13,53 +13,52 @@
 <body onLoad="load()">
     {<include file="main/header.html">}    
     <section>
-    	<div class="scrollImg" id="scrollImg">
-			{<foreach $arr|default:null as $k=>$v>}
-				{<if $k==0>}
-				<div class="imgs" id="imgs" style="display:block">
-				{<else>}
-				<div class="imgs" id="imgs" style="display:none">
-				{</if>}
-					<a href="#"  class="tooltip"> 
-						<img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="../db/activity/{<$v->aImg>}">
-					</a>
-				</div>
-			{</foreach>}
-			
-			{<if $arr|default:null==null>}
-				<div class="imgs" id="imgs">       	
-				<a href="#"  class="tooltip"> 
-					<img id='pic' src="./img/images/default.jpg">
-				</a>
-				</div>
-			{</if>}
-			
+      <div class="scrollImg" id="scrollImg">
+      {<foreach $arr|default:null as $k=>$v>}
+        {<if $k==0>}
+        <div class="imgs" id="imgs" style="display:block">
+        {<else>}
+        <div class="imgs" id="imgs" style="display:none">
+        {</if>}
+          <a href="#"  class="tooltip"> 
+            <img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="../db/activity/{<$v->aImg>}">
+          </a>
+        </div>
+      {</foreach>}
+      
+      {<if $arr|default:null==null>}
+        <div class="imgs" id="imgs">        
+        <a href="#"  class="tooltip"> 
+          <img id='pic' src="./img/images/default.jpg">
+        </a>
+        </div>
+      {</if>}
             <div style="clear:both"></div>
             <div class="scroll">
-            	{<if $arr|default:null!=null>}
-				<span  class="last" id="lastPic" onClick="f_lastPic()">&lt;</span>
-            	<span  class="next" id="nextPic" onclick="f_nextPic()">&gt;</span>
-				{</if>}
+              {<if $arr|default:null!=null>}
+        <span  class="last" id="lastPic" onClick="f_lastPic()">&lt;</span>
+              <span  class="next" id="nextPic" onclick="f_nextPic()">&gt;</span>
+        {</if>}
                 <div class="opacity"></div>
-				{<foreach $arr|default:null as $k=>$v>}
-					{<if $k==0>}
-					<div class="outline"  style="display:black">
-					{<else>}
-					<div class="outline"  style="display:none">
-					{</if>}
-						<span id="outll" class="outll">{<$v->aSummary>}</span>
-					</div>
-				{</foreach>}
-            	<ul class="circle" id="circle">
-					{<foreach $arr|default:null as $k=>$v>}
-						{<if $k==0>}
-							<li class="hover"  onclick="addEvent({<$k>})" style="color:#fff">●</li>
-						{<else>}
-							<li class="hover" onclick="addEvent({<$k>})" style="color:#b3c0cc">●</li>
-						{</if>}
+        {<foreach $arr|default:null as $k=>$v>}
+          {<if $k==0>}
+          <div class="outline"  style="display:black">
+          {<else>}
+          <div class="outline"  style="display:none">
+          {</if>}
+            <span id="outll" class="outll">{<$v->aSummary>}</span>
+          </div>
+        {</foreach>}
+              <ul class="circle" id="circle">
+          {<foreach $arr|default:null as $k=>$v>}
+            {<if $k==0>}
+              <li class="hover"  onclick="addEvent({<$k>})" style="color:#fff">●</li>
+            {<else>}
+              <li class="hover" onclick="addEvent({<$k>})" style="color:#b3c0cc">●</li>
+            {</if>}
 
-					{</foreach>}
-				</ul>
+          {</foreach>}
+        </ul>
             </div>
             <div style="clear:both;"></div>
         </div>
@@ -67,7 +66,7 @@
     </section>
     <section>
         <div class="ann">
-    		<div class="title" id="title">
+        <div class="title" id="title">
                 <span id="main">热门活动</span
                 ><span id="hot">火热进行</span
                 ><span id="history">历史回顾</span>
@@ -119,7 +118,7 @@
             </div>
         </div>
     </section><!-- 
-	<p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p> -->
+  <p class="footer">©&nbsp;2016&nbsp;广东金融学院&nbsp;校社联</p> -->
     <div class="footer"></div>
     {<include file="main/login.html">}
 </body>

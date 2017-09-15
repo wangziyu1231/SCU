@@ -70,7 +70,7 @@
                     <div class="outBox">
                     {<foreach $concern|default:null as $concern>}
                         <div class="box">
-                            <a href="main.php?controller=index&method=show1&sNO={<$concern.sNO>}">
+                            <a href="index.html?{<'controller=index&method=show1&sNO='|cat:$concern.sNO|encrypt_url:'SCU'>}">
                                 <img src=""><span class="itsName">{<$concern.sName>}</span>
                             </a>
                         </div>
@@ -84,7 +84,7 @@
                     <span class="subTitle">加入的社团：</span>
                     <div class="outBox">
                     {<foreach $society|default:null as $arr>}
-                        <div class="box"><a href="main.php?controller=index&method=show1&sNO={<$arr.sNO>}"><img src=""><span class="itsName">{<$arr.sName>}</span></a></div>
+                        <div class="box"><a href="index.html?{<'controller=index&method=show1&sNO='|cat:$arr.sNO|encrypt_url:'SCU'>}"><img src=""><span class="itsName">{<$arr.sName>}</span></a></div>
                     {<foreachelse>}                        
                         <span class="default">一个社团都没加哦</span>
                     {</foreach>}  

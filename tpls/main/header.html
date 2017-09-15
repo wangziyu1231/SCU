@@ -8,22 +8,22 @@
             <nav>
                 <div class="nav">
                     <ul id="nav">
-                        <li><a href="main.php">首页</a></li>
-                        <li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
-                        <li><a href="main.php?controller=index&method=information">社团信息</a></li>
-                        <li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="{<$url_aboutUs>}">关于社联</a></li>
+                        <li><a href="{<$url_information>}">社团信息</a></li>
+                        <li><a href="{<$url_contactUs>}">联系我们</a></li>
                     </ul>
                 </div>
             </nav>
             <div class="loRe">
 				{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}<span>|
-                </span>{<$reg|default:"<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></a>">}
+                </span>{<$reg|default:"<a href='{<$url_reg>}'><span class='lr'>注册</span></a>">}
                 <a href="./img/images/logo/ma.png" title="校社联公众号二维码" id="showPic"><img id="ma" src="./img/images/logo/ma.png"></a>
             </div>
             <img id="menu" src="./img/images/menu.png"/>
         </div>
 		<div class="nextAlert" style="display:none">
-            <a href="main.php?controller=login&method=showPI2">个人信息</a><hr>
-            <a href="main.php?controller=login&method=logout">退出</a>
+            <a href="{<$url_showPI2>}">个人信息</a><hr>
+            <a href="{<$url_logout>}">退出</a>
         </div>
     </header>

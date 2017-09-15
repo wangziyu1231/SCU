@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-08-17 10:50:57
+/* Smarty version 3.1.30, created on 2017-09-15 06:13:50
   from "F:\xampp\htdocs\SCU\tpls\main\information-of-club.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_599558f11b6866_40295522',
+  'unifunc' => 'content_59bb537eb609d8_42881465',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8183b6e054b32411a970202d566598936b143cd3' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\information-of-club.html',
-      1 => 1502959855,
+      1 => 1505448828,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:main/header.html' => 1,
     'file:main/login.html' => 1,
   ),
 ),false)) {
-function content_599558f11b6866_40295522 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59bb537eb609d8_42881465 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,46 +30,22 @@ function content_599558f11b6866_40295522 (Smarty_Internal_Template $_smarty_tpl)
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>社团信息</title>
-	<link rel="stylesheet" type="text/css" href="./img/css/main/information-of-club.css">
-	<link rel="stylesheet" type="text/css" href="./img/css/main/login.css">
 	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/information-of-club.css">
 	<?php echo '<script'; ?>
  src="./img/js/jquery.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="./img/js/main/login.js"><?php echo '</script'; ?>
->
-	<?php echo '<script'; ?>
  src="./img/js/main/club.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="./img/js/main/main.js"><?php echo '</script'; ?>
 >
 </head>
 <body onload="club()">
-	<header>
-    	<div class="top">
-    		<img src="./img/images/head1.png">
-            <div class="loRe">
-        		<?php echo (($tmp = @$_smarty_tpl->tpl_vars['login']->value)===null||$tmp==='' ? "<span class='lr' onclick='login()'>登录</span>" : $tmp);?>
-
-        		<span>|</span>
-				<?php echo (($tmp = @$_smarty_tpl->tpl_vars['reg']->value)===null||$tmp==='' ? "<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></ a>" : $tmp);?>
-
-            </div>
-        </div>
-        <nav>
-        	<div class="nav">
-           		<ul>
-          	        <li><a href="main.php">首页</a></li>
-                    <!-- <span>|</span> -->
-               		<li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
-                    <!-- <span>|</span> -->
-              		<li class="present"><a href="./main.php?controller=index&method=information">社团信息</a></li>
-                    <!-- <span>|</span> -->
-               		<li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
-                    <!-- <span>|</span> -->
-            	</ul>
-        	</div>
-        </nav>
-    </header>
+	<?php $_smarty_tpl->_subTemplateRender("file:main/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+  
 	<article>
 		<div class="informationImage">
 			<img src="./img/images/informationImg.png" alt="">
@@ -132,7 +109,8 @@ function content_599558f11b6866_40295522 (Smarty_Internal_Template $_smarty_tpl)
 
 						<table class="clubContent" id="s1">
 							<tr>
-								<td><a href="main.php?controller=index&method=show1&sno=3" title="">出雲音乐协会</a></td>
+								<td><a href="<?php echo $_smarty_tpl->tpl_vars['url_club1']->value;?>
+" title="">出雲音乐协会</a></td>
 								<td><a href="" title="">墨染文学社</a></td>
 								<td><a href="" title="">西椎动漫社</a></td>
 							</tr>

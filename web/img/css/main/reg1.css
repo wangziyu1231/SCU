@@ -21,3 +21,6 @@ article{
 		height: 22rem;
 		margin:3rem 7rem;
 }
+.submitBtn:hover{
+	background-color:#AEC5FF;
+}

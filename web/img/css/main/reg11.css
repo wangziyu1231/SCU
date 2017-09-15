@@ -1,8 +1,7 @@
 li input{
-		width:200px;
-		height:23px;	
+		width:200px;	
 		border:0;
-		font-size: 0.5rem;
+		font-size: 12px;
 		text-indent: 1em;
 		outline:none;
 }
@@ -21,12 +20,9 @@ input.submitBtn{
 		margin-top:1rem;
 		margin-left:13rem;
 		color: #000;
-		background-color: #81c0de;
+		background-color:#cfdcfd;
 		border:0;
 		outline:none;
-}
-.submitBtn:hover{
-	background-color: #00f;
 }
 form ul li{
 	list-style:none;
@@ -48,6 +44,6 @@ form ul li label{
 	-o-margin-right:0.2rem;
 }
 .state1{
-	font-size: 1.1rem;
-	font-family: lisu;
+	font-size: 0.8rem;
+	line-height: 1.9;
 }

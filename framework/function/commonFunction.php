@@ -67,4 +67,7 @@
 	function alertBack($message="hello"){
 		echo "<script>alert('{$message}');history.back();</script>";
 	} 
+	
+
+	
 ?>

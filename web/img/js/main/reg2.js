@@ -2,7 +2,6 @@ $(function(){
 			var ok1 = false;
 			var ok2 = false;
 			var ok3 = false;
-			var ok4 = false;
 			var ok5 = false;
 			var ok6 = false;
 			//验证姓名
@@ -51,21 +50,7 @@ $(function(){
 				}
 
 			});
-			$('input[name="sex"]').focus(function(){
-				$(this).next().text('性别为男或女').css("color","#000");
-			})
-			.blur(function(){
-				if($(this).val()==''){
-					$(this).next().text('性别不能为空').css("color","	#FF0000");
-				}else if($(this).val().search(/^(男|女)$/)==-1){
-					$(this).next().text('性别格式不正确').css("color","#FF0000");
-				}
-				else{
-					$(this).next().text('OK').css("color","#00FF00");
-					ok4=true;
-				}
-
-			});
+			
 			$('input[name="tel"]').focus(function(){
 				$(this).next().text('请输入手机号码').css("color","#000");
 			})
@@ -97,7 +82,7 @@ $(function(){
 
 			});
 			$('.submitBtn').click(function(){
-				if(ok1 && ok2 && ok3 && ok4 && ok5 && ok6){
+				if(ok1 && ok2 && ok3 && ok5 && ok6){
 					$('form').submit();
 				}
 				else{

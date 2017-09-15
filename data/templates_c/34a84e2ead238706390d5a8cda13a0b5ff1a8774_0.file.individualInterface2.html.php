@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-08-21 15:20:25
+/* Smarty version 3.1.30, created on 2017-09-15 09:09:42
   from "F:\xampp\htdocs\SCU\tpls\main\individualInterface2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_599ade1952bc25_09294110',
+  'unifunc' => 'content_59bb7cb6366021_45238758',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34a84e2ead238706390d5a8cda13a0b5ff1a8774' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\individualInterface2.html',
-      1 => 1503321621,
+      1 => 1505459380,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main/login.html' => 1,
   ),
 ),false)) {
-function content_599ade1952bc25_09294110 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59bb7cb6366021_45238758 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -119,7 +119,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['concern']->value) {
 ?>
                         <div class="box">
-                            <a href="main.php?controller=index&method=show1&sNO=<?php echo $_smarty_tpl->tpl_vars['concern']->value['sNO'];?>
+                            <a href="index.html?<?php echo encrypt_url(('controller=index&method=show1&sNO=').($_smarty_tpl->tpl_vars['concern']->value['sNO']),'SCU');?>
 ">
                                 <img src=""><span class="itsName"><?php echo $_smarty_tpl->tpl_vars['concern']->value['sName'];?>
 </span>
@@ -147,7 +147,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, (($tmp = @$_sma
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['arr']->value) {
 ?>
-                        <div class="box"><a href="main.php?controller=index&method=show1&sNO=<?php echo $_smarty_tpl->tpl_vars['arr']->value['sNO'];?>
+                        <div class="box"><a href="index.html?<?php echo encrypt_url(('controller=index&method=show1&sNO=').($_smarty_tpl->tpl_vars['arr']->value['sNO']),'SCU');?>
 "><img src=""><span class="itsName"><?php echo $_smarty_tpl->tpl_vars['arr']->value['sName'];?>
 </span></a></div>
                     <?php
