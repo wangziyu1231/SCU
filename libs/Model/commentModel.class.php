@@ -14,7 +14,6 @@
 
 				`society_evaluate`（
 				topic_id	主键
-				topic_type	主题type
 				content	评论内容
 				date_of_entry 评论提交时间
 				）
@@ -35,7 +34,7 @@
 				if(DB::insert($table,$_POST,'ssss')){
 					$arr_user_comment = array(
 						'username' => $_POST['userinfo']['username'],
-						'topic_id' => $_$_POST['topic_id']
+						'topic_id' => $_POST['topic_id']
  					 );
  					$arr_sno_comment = array(
  						'sNO' => $_GET['sNO'], 
