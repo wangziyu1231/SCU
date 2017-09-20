@@ -14,11 +14,29 @@
 <body>
     {<include file="main/oMBegin.html">} 
     
-            	<form method="post" id="form1">
-                    <textarea class="comment_textarea"  placeholder="请输入评论..."></textarea>
+            	<form method="post" id="form1" action="index.html?{<'controller=login&method=addComment'|encrypt_url:'SCU'>}">
+                    <input type="hidden" name="sNO" value="{<$sNO>}">
+                    <textarea class="comment_textarea"  placeholder="请输入评论..." name="content"></textarea>
                     <input type="submit" class="submit" value="提交">                    
                 </form>
                 <div class="com">
+
+                    {<foreach $comment_arr|default:null as $comment_arr>}
+                        <div class="comment">
+                        <img class="head_portrait" src="{<$comment_arr.portrait>}">
+                        <div class="comment_right">
+                            <span class="my_name" name="my_name">{<$comment_arr.name>}</span>
+                            <span class="time" name="time">{<$comment_arr.date_of_entry>}</span>
+                            <div class="conDiv">
+                               <span class="con">{<$comment_arr.content>}</span>
+                            </div>
+                        </div>  
+                    </div>
+                    {<foreachelse>}
+                        <span class="default">该社团暂未收到评论，快来抢沙发吧~</span>
+                    {</foreach>}
+
+                    <!--
                     <div class="comment">
                         <img class="head_portrait" src="./img/images/img11.jpg">
                         <div class="comment_right">
@@ -48,7 +66,7 @@
                                <span class="con">大爱出雲！！！</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <a href="#" class="comment_a"> >>评论(分页显示)</a>           
              

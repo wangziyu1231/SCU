@@ -80,5 +80,21 @@
 				alertGO("退出成功","main.php");
 
 		}
+
+		//发表评论
+		function addComment(){
+			@session_start();
+			if(isset($_SESSION['userinfo'])){
+				$addCommMod = M('comment');
+				$add_result = $addCommMod ->addComment();
+				if($add_result)
+					// alertBack('评论成功');
+					alertGo('评论成功','index.html?AT9VPlVpVCRdLwBlAzpXaQpgUnZTbgs5Vm4BZAUxUysLcANqADdXJ1szCm8JOAdoCXUFO1M8W3cGY1dwCykATgETVWxVNA%3D%3D');
+				else
+					alertBack('服务器错误,请稍后再试');
+			}
+			else
+				alertBack('请先登录');
+		}
 	}
 ?>

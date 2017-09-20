@@ -6,39 +6,20 @@
 		*	  
 		*/
 		function addComment(){
-			if(!empty($_POST) && isset($_GET['sNO'])){
+			if(!empty($_POST)){
 				$table = 'society_evaluate';
-				//注：这个表仍需修改 
-
-				/*
-
-				`society_evaluate`（
-				topic_id	主键
-				content	评论内容
-				date_of_entry 评论提交时间
-				）
-				add table `user_comment`（
-				username  用户id
-				topic_id  评论id
-				）
-				add table `sno_comment`（
-
-				sNO  社团id
-				topic_id  评论id
-				）
-
-				*/
-
-				//一系列sql插入操作逻辑
-
-				if(DB::insert($table,$_POST,'ssss')){
+				$arr_comm = array(
+					'content' => $_POST['content']
+					);
+				if(DB::insert($table,$arr_comm,'s')){
+					$topic_id = DB::insertId();
 					$arr_user_comment = array(
-						'username' => $_POST['userinfo']['username'],
-						'topic_id' => $_POST['topic_id']
+						'username' => $_SESSION['userinfo']['username'],
+						'topic_id' => $topic_id
  					 );
  					$arr_sno_comment = array(
- 						'sNO' => $_GET['sNO'], 
- 						'topic_id' => $_$_POST['topic_id']
+ 						'sNO' => $_POST['sNO'], 
+ 						'topic_id' => $topic_id
  					);
 					$flag = DB::insert('user_comment',$arr_user_comment,'ss');
 					if($flag){
@@ -50,7 +31,7 @@
 							return false;
 					}
 					else
-						return false
+						return false;
 
 				}
 				else
@@ -58,11 +39,10 @@
 			}
 		}
 
-		function getAll(){
-			if(!empty($_GET['sNO'])){
-				//从get方法获取sno
-				$sNO = $_GET['sNO'];
-				$sql = "select * from `society_evaluate` where `sNO`='$sNO'";
+		function getAll($sNO){
+			if(!empty($sNO)){
+				// $sNO = $_GET['sNO'];
+				$sql = "select se.*,ui.`name`,ui.`portrait` from `society_evaluate` as se , `user_comment` as uc , `sno_comment` as sc ,`userinfo` as ui ,`societyinfo` as si where sc.`sNO`='3' and sc.`topic_id` = se.`topic_id` and se.`topic_id` = uc.`topic_id` and uc.`username` = ui.`username` group by se.`topic_id` order by se.`date_of_entry` desc";
 				$rst = DB::query($sql);
 				if($rst){
 					$result = DB::fetch(DB::FETCH_ALL,DB::FETCH_ASSOC);

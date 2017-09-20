@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-06 16:41:32
+/* Smarty version 3.1.30, created on 2017-09-20 15:38:06
   from "F:\xampp\htdocs\SCU\tpls\main\orgMessage3.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b0091c133778_68808988',
+  'unifunc' => 'content_59c26f3e2706d3_46946797',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a5d4adf46ae160157e47b592af5f7cad19b231' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\orgMessage3.html',
-      1 => 1504708751,
+      1 => 1505914681,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main/oMEnd.html' => 1,
   ),
 ),false)) {
-function content_59b0091c133778_68808988 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c26f3e2706d3_46946797 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,11 +50,47 @@ function content_59b0091c133778_68808988 (Smarty_Internal_Template $_smarty_tpl)
 ?>
  
     
-            	<form method="post" id="form1">
-                    <textarea class="comment_textarea"  placeholder="请输入评论..."></textarea>
+            	<form method="post" id="form1" action="index.html?<?php echo encrypt_url('controller=login&method=addComment','SCU');?>
+">
+                    <input type="hidden" name="sNO" value="<?php echo $_smarty_tpl->tpl_vars['sNO']->value;?>
+">
+                    <textarea class="comment_textarea"  placeholder="请输入评论..." name="content"></textarea>
                     <input type="submit" class="submit" value="提交">                    
                 </form>
                 <div class="com">
+
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, (($tmp = @$_smarty_tpl->tpl_vars['comment_arr']->value)===null||$tmp==='' ? null : $tmp), 'comment_arr');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['comment_arr']->value) {
+?>
+                        <div class="comment">
+                        <img class="head_portrait" src="<?php echo $_smarty_tpl->tpl_vars['comment_arr']->value['portrait'];?>
+">
+                        <div class="comment_right">
+                            <span class="my_name" name="my_name"><?php echo $_smarty_tpl->tpl_vars['comment_arr']->value['name'];?>
+</span>
+                            <span class="time" name="time"><?php echo $_smarty_tpl->tpl_vars['comment_arr']->value['date_of_entry'];?>
+</span>
+                            <div class="conDiv">
+                               <span class="con"><?php echo $_smarty_tpl->tpl_vars['comment_arr']->value['content'];?>
+</span>
+                            </div>
+                        </div>  
+                    </div>
+                    <?php
+}
+} else {
+?>
+
+                        <span class="default">该社团暂未收到评论，快来抢沙发吧~</span>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+
+                    <!--
                     <div class="comment">
                         <img class="head_portrait" src="./img/images/img11.jpg">
                         <div class="comment_right">
@@ -84,7 +120,7 @@ function content_59b0091c133778_68808988 (Smarty_Internal_Template $_smarty_tpl)
                                <span class="con">大爱出雲！！！</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <a href="#" class="comment_a"> >>评论(分页显示)</a>           
              
