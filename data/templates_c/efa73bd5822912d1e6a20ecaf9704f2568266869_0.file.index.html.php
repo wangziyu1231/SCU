@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-06 16:41:14
+/* Smarty version 3.1.30, created on 2017-09-26 12:01:24
   from "F:\xampp\htdocs\SCU\tpls\main\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59b0090a8f6434_58085903',
+  'unifunc' => 'content_59ca2574e696d3_91900292',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'efa73bd5822912d1e6a20ecaf9704f2568266869' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\index.html',
-      1 => 1504708867,
+      1 => 1506420079,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main/login.html' => 1,
   ),
 ),false)) {
-function content_59b0090a8f6434_58085903 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ca2574e696d3_91900292 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,10 +58,19 @@ foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars[
         <?php } else { ?>
         <div class="imgs" id="imgs" style="display:none">
         <?php }?>
-          <a href="#"  class="tooltip"> 
-            <img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="../db/activity/<?php echo $_smarty_tpl->tpl_vars['v']->value->aImg;?>
+        <!--
+        <a href="main.php?controller=index&method=activityMore&aNO=<?php echo $_smarty_tpl->tpl_vars['v']->value->aNO;?>
+"  class="tooltip"> 
+            <img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="<?php echo $_smarty_tpl->tpl_vars['v']->value->aImg;?>
 ">
           </a>
+          -->
+          <a href="index.html?<?php echo encrypt_url(('controller=index&method=activityMore&aNO=').($_smarty_tpl->tpl_vars['v']->value->aNO),'SCU');?>
+"  class="tooltip"> 
+            <img id='pic' onmouseover="mouseover()" onmouseout="mouseout()" src="<?php echo $_smarty_tpl->tpl_vars['v']->value->aImg;?>
+">
+          </a>
+          
         </div>
       <?php
 }
@@ -94,7 +103,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars[
           <?php } else { ?>
           <div class="outline"  style="display:none">
           <?php }?>
-            <span id="outll" class="outll"><?php echo $_smarty_tpl->tpl_vars['v']->value->aSummary;?>
+            <span id="outll" class="outll"><?php echo $_smarty_tpl->tpl_vars['v']->value->aName;?>
 </span>
           </div>
         <?php
@@ -137,49 +146,65 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 ><span id="history">历史回顾</span>
             </div>
             <div id="mode1" class="mode">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, (($tmp = @$_smarty_tpl->tpl_vars['arr2']->value)===null||$tmp==='' ? null : $tmp), 'v', false, 'k');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+?>
                 <div class="mode1" id="mar">
-                  <img class="top3" id='borad' src="./img/images/img1.jpg">
-                  <div class="title">草地音乐节</div>
-                  <div class="content">一次情感的释放,一次灵魂的交流,一次自然与音乐的完美锲合, 无座位 无演员 人人都是舞台重心,满自由 满音量 跟随音乐挥洒热情, 尝试 感受 释放,其实你并不平凡,只是不愿尝试,期待与你遇见, ----再不疯狂我们就老了。</div>
-                </div><div class="mode1" id="mar">
-                  <img class="top3" id='borad' src="./img/images/img2.jpg">
-                  <div class="title">草地音乐节</div>
-                  <div class="content">一次情感的释放,一次灵魂的交流,一次自然与音乐的完美锲合, 无座位 无演员 人人都是舞台重心,满自由 满音量 跟随音乐挥洒热情, 尝试 感受 释放,其实你并不平凡,只是不愿尝试,期待与你遇见, ----再不疯狂我们就老了。</div>
-                </div><div class="mode1" >
-                  <img class="top3" id='borad' src="./img/images/img3.jpg">
-                  <div class="title">草地音乐节</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div>                      
+                  <a href="index.html?<?php echo encrypt_url(('controller=index&method=activityMore&aNO=').($_smarty_tpl->tpl_vars['v']->value->aNO),'SCU');?>
+"><img class="top3" id='borad' src="<?php echo $_smarty_tpl->tpl_vars['v']->value->aImg;?>
+"></a>
+                  <div class="title"><?php echo $_smarty_tpl->tpl_vars['v']->value->aName;?>
+</div>
+                </div>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
             </div>
+
             <div id="mode2" class="mode">
-                <div class="mode1" id="mar">
-                  <img class="top3" id='borad' src="./img/images/img11.jpg">
-                  <div class="title">草地音乐节2</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div><div class="mode1" id="mar">
-                  <img class="top3" id='borad' src="./img/images/img3.jpg">
-                  <div class="title">草地音乐节</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div><div class="mode1" >
-                  <img class="top3" id='borad' src="./img/images/img2.jpg">
-                  <div class="title">草地音乐节</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div>                      
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, (($tmp = @$_smarty_tpl->tpl_vars['arr3']->value)===null||$tmp==='' ? null : $tmp), 'v', false, 'k');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+?>
+                <div class="mode2" id="mar">
+                  <a href="index.html?<?php echo encrypt_url(('controller=index&method=activityMore&aNO=').($_smarty_tpl->tpl_vars['v']->value->aNO),'SCU');?>
+"><img class="top3" id='borad' src="<?php echo $_smarty_tpl->tpl_vars['v']->value->aImg;?>
+"></a>
+                  <div class="title"><?php echo $_smarty_tpl->tpl_vars['v']->value->aName;?>
+</div>
+                </div>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
             </div>
             <div id="mode3" class="mode">
-                <div class="mode1" id="mar">
-                  <img class="top3" id='borad' src="./img/images/img4.jpg">
-                  <div class="title">草地音乐节3</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div><div class="mode1" id="mar">
-                  <img class="top3" id='borad' src="./img/images/img10.jpg">
-                  <div class="title">草地音乐节</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div><div class="mode1" >
-                  <img class="top3" id='borad' src="./img/images/img11.jpg">
-                  <div class="title">草地音乐节</div><br/>
-                  <div class="content">在草地上来一场音乐盛宴</div>
-                </div>                      
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, (($tmp = @$_smarty_tpl->tpl_vars['arr4']->value)===null||$tmp==='' ? null : $tmp), 'v', false, 'k');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+?>
+                <div class="mode3" id="mar">
+                  <a href="index.html?<?php echo encrypt_url(('controller=index&method=activityMore&aNO=').($_smarty_tpl->tpl_vars['v']->value->aNO),'SCU');?>
+"><img class="top3" id='borad' src="<?php echo $_smarty_tpl->tpl_vars['v']->value->aImg;?>
+"></a>
+                  <div class="title"><?php echo $_smarty_tpl->tpl_vars['v']->value->aName;?>
+</div>
+                </div>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
             </div>
         </div>
     </section><!-- 

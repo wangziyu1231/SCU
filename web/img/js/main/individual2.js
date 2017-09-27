@@ -13,9 +13,22 @@ $(function(){
 		$("#perInfor").css("backgroundColor","lightgrey");
 	});
 	$("#perInfor").click();
-
+	
+	function finishChangeInfor(){
+		$("#edit").text("编辑");
+		$("#edit").removeClass("finish");
+		$(".editable").attr("disabled","disabled");	
+		$(".editable").addClass("edit");
+	}
+	function changeInfor(){
+		$("#edit").text("完成");
+		$("#edit").addClass("finish");
+		$(".editable").removeAttr('disabled');
+		$(".editable").removeClass("edit");	
+	}
 	// 编辑信息
 	$("#edit").click(function(){
+		var i=0;
 		if($(this).hasClass('finish')){
 			if(!(telFlag&&wechatFlag&&emailFlag)) return false;
 			// 信息无误,获取并上传信息
@@ -29,23 +42,23 @@ $(function(){
 				success: function(data){
 					var data=eval("("+data+")");
 					if(data.success){
-						$("#edit").text("编辑");
-						$("#edit").removeClass("finish");
-						$(".editable").attr("disabled","disabled");	
-					} else {
+						finishChangeInfor();	
+					} else {			 
+						if(i==0){
+							finishChangeInfor();
+							return;
+						}
 						alert("不符合要求，修改失败");
 					}  
 				},
-				error: function(jqXHR){     
+				error: function(jqXHR){ 
 				   alert("发生错误：" + jqXHR.status);  
 				}
 
 			});
 		}
 		else{
-			$(this).text("完成");
-			$(this).addClass("finish");
-			$(".editable").removeAttr('disabled');
+			changeInfor();
 			// 验证信息
 			telFlag=true;
 			emailFlag=true;
@@ -68,6 +81,7 @@ $(function(){
 						tip.text("");
 						tip.css("display","none");
 						newTel=$(this).val();
+						i++;
 						telFlag=true;
 					}
 				}
@@ -82,6 +96,7 @@ $(function(){
 						tip.text("");					
 						tip.css("display","none");
 						newEmail=$(this).val();
+						i++;
 						emailFlag=true;
 					}
 				}
@@ -96,6 +111,7 @@ $(function(){
 						tip.text("");
 						tip.css("display","none");
 						newWechat=$(this).val();
+						i++;
 						wechatFlag=true;
 					}
 				}

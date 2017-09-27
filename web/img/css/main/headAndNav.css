@@ -6,8 +6,8 @@ body{
 	min-width: 280px;
 	min-height:344px;
 }
-a,span,p,td,input,li{
-	font-family: Simhei;
+a,span,p,td,input,li,div{
+	font-family: SimHei;
 }
 header .top{
 	margin:0 auto;
@@ -20,21 +20,13 @@ header .top #span{
 }
 #name{font-size:1.5rem;}
 #website{font-size: 1.3rem;}
-nav .nav ul li a{
-	color: #666;
-	text-decoration: none;
-}
-nav .nav ul li a:hover{
-	color:#67BAF2;
-}
 .lr{
 	font-size:14px;
 	cursor: pointer;
 }
 .loRe span{
-	color:#999;
+	color:#222;
 	display:inline-block;
-	margin-top:15px;
 }
 img[id=ma]{
 	width:30px;
@@ -123,6 +115,13 @@ nav .nav{
 	nav .nav ul .present a{
 		font-weight: bold;
 	}
+	nav .nav ul li a{
+		color: #222;
+		text-decoration: none;
+	}
+	nav .nav ul li a:hover{
+		color:#67BAF2;
+	}
 	.loRe{
 		position: absolute;
 		right:3.29%;
@@ -133,28 +132,6 @@ nav .nav{
 	}
 	.top img[id=menu]{
 		display: none;
-	}
-	#tringle{
-		height:0;
-	  	width:0;
-	  	border-right:solid 5px rgba(0,0,0,0);
-	  	border-top:solid 10px #bbb;
-	  	border-left:solid 5px rgba(0,0,0,0);
-	  	display: inline-block;
-	}
-	.nextAlert{
-	    height: 4.3rem;
-	    width: 5.1rem;
-	    background: rgba(150,150,150,0.2);
-	    float: right;
-	    z-index: 4;
-	  	right:6%;
-	  	top:3.8rem;
-	    border-top:0.8rem solid #fff;
-	}
-	.nextAlert hr{
-	    width: 85%;
-	    border-color: #fafafa;
 	}
 }
 @media (max-width: 1189px){
@@ -179,33 +156,37 @@ nav .nav{
 		left:0%;
 		top:75px;
 		width:100%;
-		padding-top:10px;
 		box-sizing: border-box; 
 		border-color: #101010;   
 		border-top: 1px solid transparent;
     	box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
-    	background-color: #fff;
+    	background-color: rgb(43, 158, 212);
 	}
 	nav .nav ul li{
-		height:30px;
+		margin:10px 20px;
+		list-style: none;
 	}
 	nav .nav ul li a{
+		text-decoration: none;
+		text-align:center;
 		font-size: 18px;
 		line-height:1.8;
 		color:#222;
-		padding-left:20px;
-		display: inline-block;
+		height:30px;
 		box-sizing:border-box;
+		display: inline-block;
+		border-radius: 5px;
+		background-color: #67BAF2;
 		width:100%;
 	}	
 	nav .nav ul li a:hover{
-		color:#999;
+		color:#fff;
 	}
 	nav .nav ul li.present{
 		border-bottom:none;
 	}
 	nav .nav ul li.present a{
-		color:#67BAF2;		
+		color:#222;		
 	}
 	.top img[id=menu]{
 		position: absolute;
@@ -217,14 +198,24 @@ nav .nav{
 	}
 	.loRe{
 		width:100%;
-		background-color: #fff;
+		background-color: #2B9ED4;
 		position: absolute;
 		left:0%;
-		top:201px;
+		top:245px;
 		text-align: left;
-		line-height: 0.5;
-		padding-left:20px;
-		padding-bottom:20px;
+		padding:0px 20px 10px;
+		box-sizing:border-box;
+		border-bottom: 2px solid #28628A;
+	}
+	.loRe .list{
+		height: 30px;
+		background-color: #80AFD0;
+		border-radius: 5px;
+		text-align: center;
+		line-height: 1.8;
+	}	
+	.loRe span:hover{
+		color: #FFF;
 	}
 	#ma{
 		display: none;
@@ -232,23 +223,16 @@ nav .nav{
 	.layout{
 		right:10%;
 	}
-	#tringle{
-		height:0;
-	  	width:0;
-	  	border-top:solid 5px rgba(0,0,0,0);
-	  	border-left:solid 10px #bbb;
-	  	border-bottom:solid 5px rgba(0,0,0,0);
-	  	display: inline-block;
-	}
 	.nextAlert a#none{
 		display: none;
 	}
 	.nextAlert{
-	    width:3.5rem;
+	    width:3.8rem;
 	    height: 2.2rem;
 	    float: left;
-	  	top:13rem;
-	  	margin-left:128px;
+	  	top:11.5rem;
+	  	margin-left:130px;
+	  	text-indent:4.5px;
 	}
 	.nextAlert a{
 		font-size: 14px;

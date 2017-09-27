@@ -14,16 +14,14 @@
                         <li><a href="{<$url_contactUs>}">联系我们</a></li>
                     </ul>
                 </div>
-            </nav>
+            </nav>            
             <div class="loRe">
-				{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}<span>|
-                </span>{<$reg|default:"<a href='{<$url_reg>}'><span class='lr'>注册</span></a>">}
-                <a href="./img/images/logo/ma.png" title="校社联公众号二维码" id="showPic"><img id="ma" src="./img/images/logo/ma.png"></a>
+                <div class="list">
+                    {<$login|default:"<span class='lr' onclick='login()'>登录</span>">}<span>|
+                    </span>{<$reg|default:"<a href='{<$url_reg>}'><span class='lr'>注册</span></a>">}
+                    <a href="./img/images/logo/ma.png" title="校社联公众号二维码" id="showPic"><img id="ma" src="./img/images/logo/ma.png"></a>
+                </div>
             </div>
             <img id="menu" src="./img/images/menu.png"/>
-        </div>
-		<div class="nextAlert" style="display:none">
-            <a href="{<$url_showPI2>}">个人信息</a><hr>
-            <a href="{<$url_logout>}">退出</a>
         </div>
     </header>

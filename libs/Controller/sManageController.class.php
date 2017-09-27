@@ -64,7 +64,7 @@
 		
 		public function activity_add(){
 			$model=M('activity');
-			$name=$model->activitySubmit();
+			$name=$model->activityAdd();
 			if($name!=false){
 				alertGO('发布活动成功','admin.php?controller=sManage&method=activity');
 			}
@@ -74,11 +74,61 @@
 		}
 		
 		public function activityDel(){
+            $model=M('activity');
+            $model->activityDel();//删除活动对应的照片
 			if(DB::del('scu_activity',"aNO={$_POST['aNO']}")>0)
 				echo json_encode(array('success'=>true));
 			else
 				echo json_encode(array('success'=>false));
+            
 		}
+        
+        //删除多余的上传的图片
+        public function remove($dir="img/images/upload",$qian='/SCU/web/'){
+			@session_start();
+			if(!empty($_SESSION['admin'])){
+                $handler=opendir($dir);
+                while(($filename=readdir($handler))!==false){
+                    if($filename != "." && $filename !=".."){
+                        $fullpath=$dir.'/'.$filename;
+                        $hand=opendir($fullpath);
+                        $i=0;
+                        while(($file=readdir($hand))!==false){
+                            if($file != "." && $file!=".."){
+                                $files[]=($qian.$fullpath.'/'.$file);
+                                $i++;
+                            }
+                        }
+                        if($i==0){
+                            rmdir($fullpath);
+                        }
+                        closedir($hand);
+                    }
+                }
+                closedir($handler);
+                $sql="select `aImg` from `scu_activity`";
+                DB::query($sql);
+                $arr=DB::fetch(DB::FETCH_ALL,DB::FETCH_ASSOC);
+                foreach(json_decode($arr) as $v){
+                    $v=explode(',',$v->aImg);
+                    foreach($v as $k){
+                        $tFiles[]=$k;
+                    }
+                }
+                foreach($files as $k){
+                    if(!in_array($k,$tFiles)){
+                        $temp=getcwd().substr($k,8);
+                        if(is_file($temp))
+                            unlink($temp);               
+                    }
+                }
+                self::activity();
+            }
+            else{
+				alertGO("请先登录","admin.php");
+            }
+        }
+        
 	
 	//现有社团
 		//显示页面
@@ -641,6 +691,7 @@
                 else{
                     VIEW::_assign("url","scuShow");
                 }
+                VIEW::_assign('host',$GLOBALS['host']);
 				VIEW::display('admin/scuManagement.html');
 			}else{
 				alertGO("请先登录","admin.php");

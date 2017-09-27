@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-20 15:38:06
+/* Smarty version 3.1.30, created on 2017-09-26 09:13:53
   from "F:\xampp\htdocs\SCU\tpls\main\orgMessage3.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59c26f3e2706d3_46946797',
+  'unifunc' => 'content_59c9fe317e6013_36064788',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3a5d4adf46ae160157e47b592af5f7cad19b231' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\orgMessage3.html',
-      1 => 1505914681,
+      1 => 1506410032,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main/oMEnd.html' => 1,
   ),
 ),false)) {
-function content_59c26f3e2706d3_46946797 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c9fe317e6013_36064788 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -122,7 +122,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         </div>
                     </div> -->
                 </div>
-                <a href="#" class="comment_a"> >>评论(分页显示)</a>           
+                <a href="#" class="comment_a">查看更多</a>           
              
     <?php $_smarty_tpl->_subTemplateRender("file:main/oMEnd.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

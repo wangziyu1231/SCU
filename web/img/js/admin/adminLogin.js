@@ -47,7 +47,7 @@ function check_a(){
 				success:function(da){
 					var x=eval("("+da+")");
 					if(x.success==1){
-						document.location="admin.php?controller=socmem&method=iframe";
+						location.href="admin.php?controller=socmem&method=iframe";
 					}
 					else if(x.success==0){
 						$('#tips_a').text("密码错误").css("color","#FF0000");
@@ -82,7 +82,7 @@ function check_b(){
 				success:function(da){
 					var x=eval("("+da+")");
 					if(x.success==1){
-						document.location="admin.php?controller=sManage&method=iframe";
+						location.href="admin.php?controller=sManage&method=iframe";
 					}
 					else if(x.success==0){
 						$('#tips_b').text("密码错误").css("color","#FF0000");

@@ -31,7 +31,11 @@
 				<td style="width: 15%">{<$value->aName>}</td>
 				<td style="width: 10%">{<$value->hName>}</td>
 				<td style="width: 10%">{<$value->date_of_entry>}</td>
-				<td style="width: 15%">{<$value->location>}</td>
+        <td style="width: 15%">{<$value->location>}
+          {<if $value->location=="公告" >}
+              {<$value->category>}
+          {</if>}
+        </td>
 				<td style="width: 8%">
           <form method="POST" action="admin.php?controller=sManage&method=activityUpdate">
             <input style="display:none" type="text" name="aNO" value="{<$value->aNO>}"/>

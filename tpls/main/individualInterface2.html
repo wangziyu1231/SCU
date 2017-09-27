@@ -60,9 +60,9 @@
                     <label>性别：<input type="text" value="{<$userinfo['sex']|default:''>}" disabled="disabled"></label><br>
                     <label>系别：<input type="text" value="{<$userinfo['dept']|default:''>}" disabled="disabled"></label><br>
                     <label>专业：<input type="text" value="{<$userinfo['major']|default:''>}" disabled="disabled"></label><br>
-                    <label>手机号：<input type="text" name="tel" value="{<$userinfo['tel']|default:''>}"    disabled="disabled" class="editable" placeholder="请输入手机号码"></label><br><div class="tip"></div>
-                    <label>微信号：<input type="text" name="wechat" value="{<$userinfo['wechat']|default:''>}" disabled="disabled" class="editable" placeholder="请输入微信号"></label><br><div class="tip"></div>
-                    <label>邮箱：<input type="email" name="email" value="{<$userinfo['email']|default:''>}" disabled="disabled" class="editable" placeholder="请输入邮箱地址"></label><br><div class="tip"></div>
+                    <label>邮箱：<input type="email" name="email" value="{<$userinfo['email']|default:''>}" disabled="disabled" class="editable edit" placeholder="请输入邮箱地址"></label><br><div class="tip"></div>
+                    <label>手机号：<input type="text" name="tel" value="{<$userinfo['tel']|default:''>}"    disabled="disabled" class="editable edit" placeholder="请输入手机号码"></label><br><div class="tip"></div>
+                    <label>微信号：<input type="text" name="wechat" value="{<$userinfo['wechat']|default:''>}" disabled="disabled" class="editable edit" placeholder="请输入微信号"></label><br><div class="tip"></div>
                 </form>
                 <!-- 我的社团 -->
                 <div id="intention">
@@ -70,7 +70,7 @@
                     <div class="outBox">
                     {<foreach $concern|default:null as $concern>}
                         <div class="box">
-                            <a href="index.html?{<'controller=index&method=show1&sNO='|cat:$concern.sNO|encrypt_url:'SCU'>}">
+                            <a href="main.php?controller=index&method=show1&sNO={<$concern.sNO>}">
                                 <img src=""><span class="itsName">{<$concern.sName>}</span>
                             </a>
                         </div>
@@ -84,7 +84,7 @@
                     <span class="subTitle">加入的社团：</span>
                     <div class="outBox">
                     {<foreach $society|default:null as $arr>}
-                        <div class="box"><a href="index.html?{<'controller=index&method=show1&sNO='|cat:$arr.sNO|encrypt_url:'SCU'>}"><img src=""><span class="itsName">{<$arr.sName>}</span></a></div>
+                        <div class="box"><a href="main.php?controller=index&method=show1&sNO={<$arr.sNO>}"><img src=""><span class="itsName">{<$arr.sName>}</span></a></div>
                     {<foreachelse>}                        
                         <span class="default">一个社团都没加哦</span>
                     {</foreach>}  

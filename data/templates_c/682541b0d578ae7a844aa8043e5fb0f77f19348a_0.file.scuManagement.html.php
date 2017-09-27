@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-08-13 08:42:03
-  from "F:\xampp\htdocs\newSCU\SCU\tpls\admin\scuManagement.html" */
+/* Smarty version 3.1.30, created on 2017-09-26 11:23:23
+  from "F:\xampp\htdocs\SCU\tpls\admin\scuManagement.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_598ff4bb3b7d20_10497184',
+  'unifunc' => 'content_59ca1c8b2f1d70_44921777',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c75ed0d3e98a8e4fe0e21c81bcb66a3c54709ddf' => 
+    '682541b0d578ae7a844aa8043e5fb0f77f19348a' => 
     array (
-      0 => 'F:\\xampp\\htdocs\\newSCU\\SCU\\tpls\\admin\\scuManagement.html',
-      1 => 1502456248,
+      0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\admin\\scuManagement.html',
+      1 => 1505465878,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_598ff4bb3b7d20_10497184 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ca1c8b2f1d70_44921777 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +85,8 @@ function content_598ff4bb3b7d20_10497184 (Smarty_Internal_Template $_smarty_tpl)
 										</div>
 									</div>
 			<div class="bg">
-			<iframe id="ifr" src="http://localhost/SCU/web/admin.php?controller=sManage&method=<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+        <iframe id="ifr" src="http://<?php echo $_smarty_tpl->tpl_vars['host']->value;?>
+/SCU/web/admin.php?controller=sManage&method=<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 " scrolling="yes" width="100%" height="700px" frameborder="0"></iframe>
 			</div>
 		</article>

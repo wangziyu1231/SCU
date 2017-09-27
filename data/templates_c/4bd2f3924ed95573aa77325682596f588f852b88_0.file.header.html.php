@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-15 05:39:34
+/* Smarty version 3.1.30, created on 2017-09-26 10:26:58
   from "F:\xampp\htdocs\SCU\tpls\main\header.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59bb4b76502b81_82454890',
+  'unifunc' => 'content_59ca0f52426132_94549618',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bd2f3924ed95573aa77325682596f588f852b88' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\header.html',
-      1 => 1505446590,
+      1 => 1506414240,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59bb4b76502b81_82454890 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ca0f52426132_94549618 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <header>
         <div class="top">
@@ -41,21 +41,17 @@ function content_59bb4b76502b81_82454890 (Smarty_Internal_Template $_smarty_tpl)
 ">联系我们</a></li>
                     </ul>
                 </div>
-            </nav>
+            </nav>            
             <div class="loRe">
-				<?php echo (($tmp = @$_smarty_tpl->tpl_vars['login']->value)===null||$tmp==='' ? "<span class='lr' onclick='login()'>登录</span>" : $tmp);?>
+                <div class="list">
+                    <?php echo (($tmp = @$_smarty_tpl->tpl_vars['login']->value)===null||$tmp==='' ? "<span class='lr' onclick='login()'>登录</span>" : $tmp);?>
 <span>|
-                </span><?php echo (($tmp = @$_smarty_tpl->tpl_vars['reg']->value)===null||$tmp==='' ? "<a href='".((string)$_smarty_tpl->tpl_vars['url_reg']->value)."'><span class='lr'>注册</span></a>" : $tmp);?>
+                    </span><?php echo (($tmp = @$_smarty_tpl->tpl_vars['reg']->value)===null||$tmp==='' ? "<a href='".((string)$_smarty_tpl->tpl_vars['url_reg']->value)."'><span class='lr'>注册</span></a>" : $tmp);?>
 
-                <a href="./img/images/logo/ma.png" title="校社联公众号二维码" id="showPic"><img id="ma" src="./img/images/logo/ma.png"></a>
+                    <a href="./img/images/logo/ma.png" title="校社联公众号二维码" id="showPic"><img id="ma" src="./img/images/logo/ma.png"></a>
+                </div>
             </div>
             <img id="menu" src="./img/images/menu.png"/>
-        </div>
-		<div class="nextAlert" style="display:none">
-            <a href="<?php echo $_smarty_tpl->tpl_vars['url_showPI2']->value;?>
-">个人信息</a><hr>
-            <a href="<?php echo $_smarty_tpl->tpl_vars['url_logout']->value;?>
-">退出</a>
         </div>
     </header><?php }
 }

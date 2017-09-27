@@ -177,7 +177,7 @@ $(function(){
     var open=false;
     $("#menu").click(function() {
         if(!open){
-           $(".top").css("height","241px");
+           $(".top").css("height","287px");
            open=true;    
         }
         else{

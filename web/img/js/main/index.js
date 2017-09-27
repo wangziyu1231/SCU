@@ -14,7 +14,7 @@ var aImage_index=0;
 
 //一开始就加载的函数
 function load(){
-	getAImage();//从后台获取宣传照片
+	//getAImage();//从后台获取宣传照片
 	changImg()
 	
 }
@@ -119,7 +119,7 @@ function f_nextPic(){
 }
 
 
-
+/*
 //点击更换下一批宣传图调用的函数
 function next_borad(){
 	if(aImage_length>=4){
@@ -173,5 +173,5 @@ function getAImage(){
 	next_borad();
 }
 
-
+*/
 

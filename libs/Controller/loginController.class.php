@@ -1,6 +1,7 @@
 <?php
 	header('content-type:text/html;charset=utf-8');
-	require_once('/../ORG/checkedImage.php');
+	// require_once('/../ORG/checkedImage.php');
+	require_once(getcwd().'/../libs/ORG/checkedImage.php');
 	//登录控制器
 	class loginController{
 		function login(){
@@ -24,14 +25,13 @@
 		}
 		
 		public function showPI(){
-			@session_start();
 			if(isset($_SESSION['userinfo'])){
 				VIEW::_assign("login","<a href='index.html?".encrypt_url("controller=login&method=showPI",'SCU')."'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr'  id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr'  id='hvr'>{$_SESSION['userinfo']['username']}</span></a><span>|</span><a href='main.php?controller=login&method=logout'><span class='lr'>退出</span></a>");
 			}
 			if(isset($_COOKIE['username'])){
 				VIEW::_assign("login","<a href='index.html?".encrypt_url("controller=login&method=showPI",'SCU')."'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr' id='hvr'>{$_COOKIE['username']}</span></a><span>|</span><a href='main.php?controller=login&method=logout'><span class='lr'>退出</span></a>");
 			}
 			VIEW::_assign("url_aboutUs","index.html?".encrypt_url("controller=index&method=showAboutUs",'SCU'));
 			VIEW::_assign("url_information","index.html?".encrypt_url("controller=index&method=information",'SCU'));
@@ -55,15 +55,13 @@
 			if($arr_concern = $userinfo->getConcern()){
 				VIEW::_assign("concern",$arr_concern);
 			}
-			@session_start();
-			// VIEW::_assign("usr",$_SESSION['userinfo']['username']);
 			if(isset($_SESSION['userinfo'])){
 				VIEW::_assign("login","<a href='index.html?".encrypt_url("controller=login&method=showPI",'SCU')."'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr'  id='hvr'>{$_SESSION['userinfo']['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr'  id='hvr'>{$_SESSION['userinfo']['username']}</span></a><span>|</span><a href='main.php?controller=login&method=logout'><span class='lr'>退出</span></a>");
 			}
 			if(isset($_COOKIE['username'])){
 				VIEW::_assign("login","<a href='index.html?".encrypt_url("controller=login&method=showPI",'SCU')."'><span class='lr' >消息<sup  id='new'>1</sup></span></a>");
-				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr' id='hvr'>{$_COOKIE['username']}<div id='tringle'></div></span></a>");
+				VIEW::_assign("reg","<a href='index.html?".encrypt_url("controller=login&method=showPI2",'SCU')."'><span class='lr' id='hvr'>{$_COOKIE['username']}</span></a><span>|</span><a href='main.php?controller=login&method=logout'><span class='lr'>退出</span></a>");
 			}
 			VIEW::_assign("url_aboutUs","index.html?".encrypt_url("controller=index&method=showAboutUs",'SCU'));
 			VIEW::_assign("url_information","index.html?".encrypt_url("controller=index&method=information",'SCU'));

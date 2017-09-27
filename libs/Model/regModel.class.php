@@ -28,7 +28,11 @@
 				密码
 				email
 			*/
-			if($_GET['method']=='two'){
+
+			//url解码
+			$url_info = geturl($_SERVER['QUERY_STRING'],'SCU');
+			$method = isset($url_info['method'])?$url_info['method']:null;
+			if($method =='two'){
 				if(!empty($_POST)){
 					$username = $_POST['username'];
 					$password = $_POST['pwd'];
@@ -53,7 +57,7 @@
 				性别
 				手机
 				微信*/
-			if($_GET['method']=='three'){
+			if($method =='three'){
 				if(!empty($_POST)){
 					$name = $_POST['realname'];
 					$dept = $_POST['dept'];
@@ -80,7 +84,7 @@
 				}
 				// insert 导入数据库
 				if(isset($reginfo['username'])){
-					DB::insert($table,$reginfo);
+					DB::insert($table,$reginfo,"ssssssssss");
 					$username_temp = $_SESSION['username'];
 					$_SESSION =array();
 					session_destroy();

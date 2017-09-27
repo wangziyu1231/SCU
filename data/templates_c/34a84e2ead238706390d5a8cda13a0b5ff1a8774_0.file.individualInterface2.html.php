@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-15 09:09:42
+/* Smarty version 3.1.30, created on 2017-09-26 10:46:12
   from "F:\xampp\htdocs\SCU\tpls\main\individualInterface2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59bb7cb6366021_45238758',
+  'unifunc' => 'content_59ca13d4b40610_12038260',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34a84e2ead238706390d5a8cda13a0b5ff1a8774' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\individualInterface2.html',
-      1 => 1505459380,
+      1 => 1506415533,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main/login.html' => 1,
   ),
 ),false)) {
-function content_59bb7cb6366021_45238758 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ca13d4b40610_12038260 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,12 +102,12 @@ function content_59bb7cb6366021_45238758 (Smarty_Internal_Template $_smarty_tpl)
 " disabled="disabled"></label><br>
                     <label>专业：<input type="text" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['userinfo']->value['major'])===null||$tmp==='' ? '' : $tmp);?>
 " disabled="disabled"></label><br>
-                    <label>手机号：<input type="text" name="tel" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['userinfo']->value['tel'])===null||$tmp==='' ? '' : $tmp);?>
-"    disabled="disabled" class="editable" placeholder="请输入手机号码"></label><br><div class="tip"></div>
-                    <label>微信号：<input type="text" name="wechat" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['userinfo']->value['wechat'])===null||$tmp==='' ? '' : $tmp);?>
-" disabled="disabled" class="editable" placeholder="请输入微信号"></label><br><div class="tip"></div>
                     <label>邮箱：<input type="email" name="email" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['userinfo']->value['email'])===null||$tmp==='' ? '' : $tmp);?>
-" disabled="disabled" class="editable" placeholder="请输入邮箱地址"></label><br><div class="tip"></div>
+" disabled="disabled" class="editable edit" placeholder="请输入邮箱地址"></label><br><div class="tip"></div>
+                    <label>手机号：<input type="text" name="tel" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['userinfo']->value['tel'])===null||$tmp==='' ? '' : $tmp);?>
+"    disabled="disabled" class="editable edit" placeholder="请输入手机号码"></label><br><div class="tip"></div>
+                    <label>微信号：<input type="text" name="wechat" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['userinfo']->value['wechat'])===null||$tmp==='' ? '' : $tmp);?>
+" disabled="disabled" class="editable edit" placeholder="请输入微信号"></label><br><div class="tip"></div>
                 </form>
                 <!-- 我的社团 -->
                 <div id="intention">
@@ -119,7 +119,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['concern']->value) {
 ?>
                         <div class="box">
-                            <a href="index.html?<?php echo encrypt_url(('controller=index&method=show1&sNO=').($_smarty_tpl->tpl_vars['concern']->value['sNO']),'SCU');?>
+                            <a href="main.php?controller=index&method=show1&sNO=<?php echo $_smarty_tpl->tpl_vars['concern']->value['sNO'];?>
 ">
                                 <img src=""><span class="itsName"><?php echo $_smarty_tpl->tpl_vars['concern']->value['sName'];?>
 </span>
@@ -147,7 +147,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, (($tmp = @$_sma
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['arr']->value) {
 ?>
-                        <div class="box"><a href="index.html?<?php echo encrypt_url(('controller=index&method=show1&sNO=').($_smarty_tpl->tpl_vars['arr']->value['sNO']),'SCU');?>
+                        <div class="box"><a href="main.php?controller=index&method=show1&sNO=<?php echo $_smarty_tpl->tpl_vars['arr']->value['sNO'];?>
 "><img src=""><span class="itsName"><?php echo $_smarty_tpl->tpl_vars['arr']->value['sName'];?>
 </span></a></div>
                     <?php
