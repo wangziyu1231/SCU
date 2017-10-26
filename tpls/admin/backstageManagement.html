@@ -8,6 +8,7 @@
 	<script src="./img/js/admin/laydate/laydate.js"></script>
 	<script src="./img/js/jquery.js"></script>
 	<script src="./img/js/admin/backstageManagement.js"></script>
+	<script src="./img/js/admin/{<$jsurl|default:'backstageManagement_1.js'>}"></script>
 	<style>
 		
 		body{
@@ -19,8 +20,11 @@
 		}
 		.bg{
 			background: #eeeced;
-			width: 100%;
+			width: 81.2%;
 			height: 44rem;
+			position: absolute;
+			margin-left: 18rem;
+			float: right;
 		}
 	</style>
 		
@@ -47,7 +51,7 @@
 			</div>
 			</div>
         <div class="bg">
-          <iframe id="ifr" scrolling="yes" width="80%" height="700px" frameborder="0" src="http://localhost/SCU/web/admin.php?controller=socmem&method={<$url>}" scrolling="yes" width="80%" height="700px" frameborder="0"></iframe>
+			<iframe id="ifr" scrolling="yes" width="100%" height="700px" frameborder="0" src="./admin.php?controller=socmem&method={<$url>}" scrolling="yes" width="80%" height="700px" frameborder="0"></iframe>
         </div>
 		</article>
 

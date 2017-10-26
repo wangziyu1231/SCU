@@ -1,3 +1,4 @@
+
 <?php
 	class socmemController{
 		//社团成员管理 控制器
@@ -14,16 +15,34 @@
 		}
 
         function iframe(){
-             @session_start();
+            @session_start();
 			if(isset($_SESSION['societyinfo'])){
 				if(isset($this->sName))
 				    VIEW::_assign('sName',$this->sName);
                 if(!empty($_GET['a'])){
+                	switch ($_GET["a"]) {
+                		case 'socMember':
+                			VIEW::_assign("jsurl","backstageManagement_1.js");
+                			break;
+                		case 'pendMember':
+                			VIEW::_assign("jsurl","backstageManagement_2.js");
+                			break;
+            			case 'regsubShow':
+            				VIEW::_assign("jsurl","backstageManagement_3.js");
+            				break;
+            			case 'actsubShow':
+            				VIEW::_assign("jsurl","backstageManagement_4.js");
+            				break;
+                		default:
+                			VIEW::_assign("jsurl","backstageManagement_1.js");
+                			
+                	}
                     VIEW::_assign("url",$_GET['a']);
                 }
                 else{
                     VIEW::_assign("url","socMember");
                 }
+                VIEW::_assign("host",$GLOBALS['host']);
 				VIEW::display('admin/backstageManagement.html');
 			}else{
 				alertGO("请先登录","admin.php");

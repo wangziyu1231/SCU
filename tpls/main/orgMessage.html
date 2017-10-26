@@ -3,69 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校社联欢迎你</title>
+<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
 <link rel="stylesheet" type="text/css" href="./img/css/main/orgMessage.css">
 <script src="./img/js/main/orgMessage.js"></script>
+<script src="./img/js/main/main.js"></script>
 </head>
 <body>
-	<header> 
-    	<div class="top">
-    		<img src="./img/images/head.jpg">
-            <div class="loRe">
-        		{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}
-        		<span>|</span>
-				{<$reg|default:"<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></ a>">}
-            </div>
-        </div>
-        <nav>
-        	<div class="nav">
-           		<ul>
-          	        <li><a href="main.php">首页</a></li>
-                    <span>|</span>
-               		<li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
-                    <span>|</span>
-              		<li class="present"><a href="main.php?controller=index&method=information">社团信息</a></li>
-                    <span>|</span>
-               		<li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
-                    <span>|</span>
-            	</ul>
-        	</div>
-        </nav>       
-    </header>
-	<div class="wrapped">
-    	<div class="content">
-    		<div class="name">
-            	<div class="name_left">
-            		<span class="org">出雲音乐协会</span><br>
-                    <a onclick="attention()">
-                    	<img src="./img/images/atten.png" id="attention_img">
-                    	<span id="attention_span">关注</span>
-                    </a>
-                </div>
-                <input type="button" value="加入社团">
-        	</div>
-            <div style="clear:both;"></div>
-        	<div class="main">
-            <!--<iframe src="orgMessage2.html" scrolling="yes" width="905px;"
-                height="590px;"></iframe>  -->          	
-        	</div>
-    	</div>
-	    <div class="pre_nav" id="floatdiv">
-            <img src="img/images/logo.png"/>
-            <ul>
-                <li><hr>
-                    <a class="nav" href="main.php?controller=index&method=show1"><span>社团简介</span></a>
-                </li>
-                <li>
-                    <a class="nav" href="main.php?controller=index&method=show2"><span>社团活动</span></a>
-                </li>
-                <li>
-                    <a class="nav" href="main.php?controller=index&method=show3"><span>社团评论</span></a>
-                </li>                
-            </ul>
-               <!-- <div class="popup">
-                    <span><em></em></span>
-                </div>-->
-        </div>
-	</div>
-</body>
-</html>
+    {<include file="main/oMBegin.html">} 
+            
+    {<include file="main/oMEnd.html">} 

@@ -1,5 +1,5 @@
 <?php
-	class getUserinfoModel{
+	class getUserInfoModel{
 	//获取会员信息模型
 		private $username;
 		//获取会员信息
@@ -55,7 +55,7 @@
 			if($flag ===1)
 				$sql = "select * from `userinfo` as a ,`user_sno` as b, `societyinfo` as c where a.username  = b.Username and b.sNO = c.sNO and a.username = '$value' and b.review = '1'";
 			else if($flag ===2)
-				$sql = "select * from `userinfo` as a ,`concern` as b, `societyinfo` as c where a.username  = b.Username and b.sNO = c.sNO and a.username = '$value' ";
+				$sql = "select * from `concern` as c, `societyinfo` as s where c.username = '$value' and c.sNO = s.sNO";
 			$rst = DB::query($sql);
 			if($rst){
 				$result = DB::fetch(DB::FETCH_ALL,DB::FETCH_ASSOC);

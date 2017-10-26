@@ -6,6 +6,10 @@ function DrowProcess(x,y,radius,process,backColor,proColor,fontColor){
 	}else{
 		return;
 	}
+	//css设置的canvas和直接在标签里或js里设置的不一样，css只是设置元素本身大小，而绘图表面会是默认大小300x150像素
+	canvas.width=200;
+	canvas.height=200;
+	canvas.marginTop=20;
 	cts.beginPath();  
 	// 坐标移动到圆心  
 	cts.moveTo(x, y);  
@@ -53,7 +57,7 @@ function DrowProcess(x,y,radius,process,backColor,proColor,fontColor){
 bfb = 0;
 time=0;
 function Start(){
-	DrowProcess(360,160,130,bfb,'#ddd','#6495ED','#6495ED');
+	DrowProcess(100,100,100,bfb,'#ddd','#6495ED','#6495ED');
 	t = setTimeout(Start,15);
 	if(bfb>=100){
 		clearTimeout(t);

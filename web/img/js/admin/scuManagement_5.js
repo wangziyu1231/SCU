@@ -19,7 +19,12 @@ $(function(){
 	
 //发布新活动
 function add(){
-	window.location.href = "http://localhost/SCU/web/admin.php?controller=sManage&method=activityShow";
+	window.location.href = "admin.php?controller=sManage&method=activityShow";
+}
+
+
+function test(){
+	document.getElementById("myform").submit();
 }
 
 var aNO;

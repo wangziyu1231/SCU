@@ -4,38 +4,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>社团信息</title>
-	<link rel="stylesheet" type="text/css" href="./img/css/main/information-of-club.css">
-	<link rel="stylesheet" type="text/css" href="./img/css/main/login.css">
 	<link rel="stylesheet" type="text/css" href="./img/css/main/headAndNav.css">
+	<link rel="stylesheet" type="text/css" href="./img/css/main/information-of-club.css">
 	<script src="./img/js/jquery.js"></script>
-	<script src="./img/js/main/login.js"></script>
 	<script src="./img/js/main/club.js"></script>
+<script src="./img/js/main/main.js"></script>
 </head>
 <body onload="club()">
-	<header>
-    	<div class="top">
-    		<img src="./img/images/head1.png">
-            <div class="loRe">
-        		{<$login|default:"<span class='lr' onclick='login()'>登录</span>">}
-        		<span>|</span>
-				{<$reg|default:"<a href='main.php?controller=reg&method=one'><span class='lr'>注册</span></ a>">}
-            </div>
-        </div>
-        <nav>
-        	<div class="nav">
-           		<ul>
-          	        <li><a href="main.php">首页</a></li>
-                    <!-- <span>|</span> -->
-               		<li><a href="main.php?controller=index&method=showAboutUs">关于社联</a></li>
-                    <!-- <span>|</span> -->
-              		<li class="present"><a href="./main.php?controller=index&method=information">社团信息</a></li>
-                    <!-- <span>|</span> -->
-               		<li><a href="main.php?controller=index&method=contactUs">联系我们</a></li>
-                    <!-- <span>|</span> -->
-            	</ul>
-        	</div>
-        </nav>
-    </header>
+	{<include file="main/header.html">}  
 	<article>
 		<div class="informationImage">
 			<img src="./img/images/informationImg.png" alt="">
@@ -99,7 +75,7 @@
 
 						<table class="clubContent" id="s1">
 							<tr>
-								<td><a href="main.php?controller=index&method=show1" title="">出雲音乐协会</a></td>
+								<td><a href="{<$url_club1>}" title="">出雲音乐协会</a></td>
 								<td><a href="" title="">墨染文学社</a></td>
 								<td><a href="" title="">西椎动漫社</a></td>
 							</tr>

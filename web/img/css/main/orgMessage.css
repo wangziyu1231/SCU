@@ -1,7 +1,10 @@
 /* CSS Document */
 *{margin:0 auto;padding:0;}
 a{text-decoration:none;font-family:SimHei;cursor:pointer;}
-p,span,input{font-family:SimHei;}
+p,span,input,div{font-family:SimHei;}
+body{
+	min-width: 636px;
+}
 .canfloat{
 	position:fixed;
 }
@@ -11,26 +14,26 @@ p,span,input{font-family:SimHei;}
 }
 .content{
 	width:100%;
-	height:800px;
+		/*height:800px;*/
 	position:absolute;
 }
-.name{
+.content .name{
 	width:100%;
 	height:179px;
 	position:absolute;
 	z-index:0;
 	background-color:#d0e0e8;
+	box-sizing: border-box;
 }
-.main{
-	margin-left:382px;
-	width:905px;
-	height:500px;
+.content .main{
+	width:100%;
+		/*height:500px;*/
 	position:absolute;
 	z-index:2;
 	top:180px;
+	box-sizing: border-box;
 }
 .name_left{
-	margin-left:400px;
 	margin-top:40px;
 	float:left;
 }
@@ -44,14 +47,15 @@ p,span,input{font-family:SimHei;}
 .name_left a img{
 	width:20px;
 	height:20px;
+	display:block;
+	margin-top:8px;
+	float:left;
 }
 .name input{
-	float:right;
 	margin-top:50px;
-	margin-right:220px;
-	display:block;
 	width:160px;
 	height:50px;
+	display: inline-block;
 	background:#6699cc;
 	font-size:22px;
 	color:#fff;
@@ -59,22 +63,47 @@ p,span,input{font-family:SimHei;}
 	border-radius:5px;
 	cursor:pointer;
 }
-.name_left img{
-	width:25px;
-	height:25px;
-	display:block;
-	margin-top:8px;
-	float:left;
-	
+@media (min-width: 1190px){
+	.main,.name{
+		padding-left: 442px;
+	}
+	.name input{
+		margin-left:338px;
+	}
+	.pre_nav{
+		left:15%;
+	}
 }
-
+@media (max-width: 1189px)and (min-width: 769px){
+	.main,.name{
+		padding-left:35%;
+	}
+	.name input{
+		margin-right:5%;
+		float: right;
+	}
+	.pre_nav{
+		left:10%;
+	}
+}
+@media (max-width: 768px){
+	.main,.name{
+		padding-left:30%;
+	}
+	.name input{
+		margin-right:5%;
+		float: right;
+	}
+	.pre_nav{
+		left:0%;
+	}
+}
 .pre_nav{
 	width:177px;
-	height:600px;
+	height:550px;
 	position:absolute;
-	z-index:1;
+	z-index:5;
 	top:0;
-	left:15%;
 	background:#fff;
 	box-shadow:0px 0px 10px 2px #999;
 }
@@ -110,38 +139,4 @@ p,span,input{font-family:SimHei;}
 	cursor:pointer;
 	color:#000;
 }
-.footer{
-	text-align:center;
-	font-size:20px;
-	line-height: 1.5;
-	background-color:#67bae1;
-}
-/*triangle*/
-/*.popup span em{
-	border-width:25px 25px 25px 0;
-	border-style:solid;
-	border-color:transparent #fff transparent transparent;
-	height:0;
-	width:0;
-	position:absolute;
-	left:4px;
-	top:-25px;
-}
-.popup span{
-	border-width:20px 20px 20px 0;
-	border-style:solid;
-	border-color:transparent #CCC transparent transparent;
-	height:0;
-	width:0;
-	position:absolute;
-	right:0;
-	top:50%;
-}
-.popup{
-	position:relative;
-	width:25px;
-	height:50px;
-	background:#FFF;
-	float:right;
-	
-}*/
+

@@ -5,7 +5,7 @@
 	width:25px;
 	height:25px;
 	position:absolute;
-	top:43%;
+	top:47%;
 	right:-12.5px;
 	box-shadow:5px -5px 10px -2px #999 inset;
 	background-color:#fff;
@@ -16,7 +16,6 @@
 }
 .activity{
 	padding-top:20px;
-	width:760px;
 	float:left;
 }
 .activity span{
@@ -27,11 +26,6 @@
 	display:block;
 	line-height:1.5;
 	height:30px;
-}
-.activity .activity_content{
-	margin-left:50px;
-	width:400px;
-	float:left;
 }
 .activity p{
 	margin-top:10px;
@@ -44,11 +38,31 @@
 	width:180px;
 	height:130px;
 	float:right;
-	margin-top:10px;
+	margin-left:10px;
+	margin-bottom: 10px;
+}
+.activity .activity_img img{
+	width:180px;
+	height:130px;
 }
 .activity hr{
-	width:95%;
 	border:0.01rem solid #d0e0e8;
-	display:block;
-	margin-left:50px;
+	display:inline-block;
+	box-sizing: border-box;
+}
+@media (min-width: 1190px){
+	.activity .activity_img{
+		margin-right:21%;
+	}
+	.activity hr{
+		width:80%;
+	}
+}
+@media (max-width: 1189px) {
+	.activity .activity_img,.activity hr{
+		margin-right:5%;
+	}
+	.activity hr{
+		width:98%;
+	}
 }

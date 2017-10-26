@@ -5,7 +5,7 @@
 	*return:控制器对象
 	*/
 	function C($name,$method=null){
-		require_once('/../../libs/Controller/'.$name.'Controller.class.php');
+		require_once('../libs/Controller/'.$name.'Controller.class.php');
 		$name.='Controller';
 		$obj=new $name;
 		if($method!=null){
@@ -19,7 +19,7 @@
 	*return:模型对象
 	*/
 	function M($name){
-		require_once('/../../libs/Model/'.$name.'Model.class.php');
+		require_once('../libs/Model/'.$name.'Model.class.php');
 		$name.='Model';
 		return (new $name);
 	}
@@ -29,7 +29,7 @@
 	*return:视图对象
 	*/
 	function V($name){
-		require_once('/../../libs/View/'.$name.'View.class.php');
+		require_once('../libs/View/'.$name.'View.class.php');
 		$name.='View';
 		return (new $View);
 	}
@@ -41,7 +41,7 @@
 	*return:第三方类对象
 	*/
 	function ORG($path,$name,$params=array()){
-		require_once('/../../libs/ORG/'.$path.$name.'.class.php');
+		require_once('../libs/ORG/'.$path.$name.'.class.php');
 		$obj=new $name();
 		if(!empty($params)){
 			foreach($params as $key=>$value){
@@ -67,4 +67,7 @@
 	function alertBack($message="hello"){
 		echo "<script>alert('{$message}');history.back();</script>";
 	} 
+	
+
+	
 ?>

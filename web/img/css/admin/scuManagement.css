@@ -38,7 +38,7 @@ header img{
 	text-overflow:ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	width: 4rem;
+	width: 50%;
 	font-size: 0.8em;
 }
 .leftUserIpt{
@@ -398,6 +398,11 @@ td{
 	margin: 0 0 0 -5%;
 	cursor: pointer;
 }
+/* .operationLook{
+	border: 0;
+	background:none;
+
+} */
 .operationLine{
 	font-size: 0.8rem;
 	margin: 0 3% 0 1%;

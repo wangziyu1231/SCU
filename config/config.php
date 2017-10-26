@@ -2,10 +2,10 @@
 	$config=array(
 	'db_config'=>array('type'=>'mysql',
 					 'host'=>'127.0.0.1',
-					 'port'=>'80',
+					 'port'=>'3306',
 					 'user'=>'root',
-					 'password'=>'412531',
-					 'dbname'=>'scu',
+					 'password'=>'',
+					 'dbname'=>'newSCU',
 					 'charset'=>'utf8'
 	),
 	'smarty_config'=>array('left_delimiter'=>'{<',
@@ -15,4 +15,5 @@
 						   'cache_dir'=>'../data/cache'
 	)
 	);
+	$GLOBALS['host']="localhost";
 ?>

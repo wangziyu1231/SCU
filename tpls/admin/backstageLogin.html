@@ -7,7 +7,7 @@
 	<script src="./img/js/jquery.js"></script>
 	<script src="./img/js/admin/adminLogin.js"></script>
 </head>
-<body >
+<body onkeydown="keyDown();">
 		<header></header>
 		<article>
 				<div class="left">
@@ -25,12 +25,12 @@
 						<div class="formIpt">
 							<span class="tips" id="tips_a"></span>		
 
-							<div class="imgUser"><input type="text" class="user" name="username" id="username_a" placeholder="请输入用户名"/><img type="image" src="./img/images/x.png" alt="reset" class="reset" onclick="reset_a()"/></div>							
+							<div class="imgUser"><input type="text" class="user" name="username" id="username_a" placeholder="请输入用户名" onkeydown="keyDown()"/><img type="image" src="./img/images/x.png" alt="reset" class="reset" onclick="reset_a()"/></div>							
 							
-							<div class="imgPwd"><input type="password" class="psd" name="password" id="password_a" placeholder="请输入密码" autocomplete="new-password" /></div>										
+							<div class="imgPwd"><input type="password" class="psd" name="password" id="password_a" placeholder="请输入密码" autocomplete="new-password" onkeydown="keyDown()"/></div>										
 													
 						</div>
-						<div class="loginBtn"><input type="submit" value="登录" name="auto_login" class="login_btn" onclick="check_a()"/><br />
+						<div class="loginBtn1"><input id="loginBtn1" type="submit" value="登录" name="auto_login" class="login_btn" onclick="check_a()"/><br />
 						</div>
 					</div>
 					
@@ -46,7 +46,7 @@
 							<div class="imgPwd"><input type="password" class="psd" name="admin_pwd" id="password_b" placeholder="请输入密码"/></div>										
 												
 						</div>
-						<div class="loginBtn"><input type="submit" value="登录" class="login_btn" onclick="check_b()"/><br />
+						<div class="loginBtn2"><input type="submit" value="登录" class="login_btn" onclick="check_b()"/><br />
 						</div>
 					</div>
 					
