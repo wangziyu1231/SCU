@@ -50,7 +50,11 @@
              </div>
     				</div>  
 		<script>
-	var ue = UE.getEditor('editor');
+	var ue = UE.getEditor('editor',{
+    initialFrameWidth :1100,
+    initialFrameHeight:560,
+    scaleEnabled:true
+  });
 
 
     function isFocus(e){
@@ -73,6 +77,7 @@
       else
           $('#div_category').hide()
     }
+    
     
 </script>
 </body>

@@ -75,7 +75,7 @@
 		function logout(){
 			$logout = M('logout');
 			if($logout->logout())
-				alertGO("退出成功","main.php");
+				alertGO("退出成功","index.html");
 
 		}
 

@@ -37,10 +37,9 @@
           {</if>}
         </td>
 				<td style="width: 8%">
-          <form method="POST" action="admin.php?controller=sManage&method=activityUpdate">
+          <form method="POST" class="form1" action="admin.php?controller=sManage&method=activityUpdate" id="myform">
             <input style="display:none" type="text" name="aNO" value="{<$value->aNO>}"/>
-            <!--<span class="operationLook">修改</span><span class="operationLine">|</span>-->
-             <input type="submit" class="operationLook" value="修改"/><span class="operationLine">|</span>
+            <span class="operationLook" onclick="test()">修改</span><span class="operationLine">|</span>
             <span class="operationDel" onclick="dell({<$value->aNO>})">删除</span>
           </form>
 				

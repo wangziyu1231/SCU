@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-26 10:26:58
+/* Smarty version 3.1.30, created on 2017-10-25 17:37:41
   from "F:\xampp\htdocs\SCU\tpls\main\header.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ca0f52426132_94549618',
+  'unifunc' => 'content_59f0afc5272067_54608159',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bd2f3924ed95573aa77325682596f588f852b88' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\header.html',
-      1 => 1506414240,
+      1 => 1506526259,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59ca0f52426132_94549618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59f0afc5272067_54608159 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <header>
         <div class="top">
@@ -44,7 +44,7 @@ function content_59ca0f52426132_94549618 (Smarty_Internal_Template $_smarty_tpl)
             </nav>            
             <div class="loRe">
                 <div class="list">
-                    <?php echo (($tmp = @$_smarty_tpl->tpl_vars['login']->value)===null||$tmp==='' ? "<span class='lr' onclick='login()'>登录</span>" : $tmp);?>
+                    <?php echo (($tmp = @$_smarty_tpl->tpl_vars['login']->value)===null||$tmp==='' ? "<span class='lr' id='login'>登录</span>" : $tmp);?>
 <span>|
                     </span><?php echo (($tmp = @$_smarty_tpl->tpl_vars['reg']->value)===null||$tmp==='' ? "<a href='".((string)$_smarty_tpl->tpl_vars['url_reg']->value)."'><span class='lr'>注册</span></a>" : $tmp);?>
 

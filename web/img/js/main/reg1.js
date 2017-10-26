@@ -4,12 +4,12 @@ ok3 = false;
 ok4 = false;
 $(function(){
 	//验证用户名
-	$("input[name='username']").focus(function(){
+	$(".reg input[name='username']").focus(function(){
 		$(this).parent().next().next().text('学号为9位数').css("color","#000");
 	})
 	.blur(function(){
 		if($(this).val()==''){
-			$(this).parent().next().next().text('学号不为空').css("color","#FF0000");
+			$(this).parent().next().next().text('学号不能为空').css("color","#FF0000");
 		}else if($(this).val().search(/^[1-9][0-9]{8}$/)==-1){
 			$(this).parent().next().next().text('学号格式不正确').css("color","#FF0000");
 		}
@@ -23,10 +23,10 @@ $(function(){
 				success:function(da){
 					var x=eval("("+da+")");
 					if(x.success){
-						$("input[name='username']").parent().next().next().text('');
+						$(".reg input[name='username']").parent().next().next().text('');
 						ok1=true;
 					}else{
-						$("input[name='username']").parent().next().next().text('用户名已存在').css("color","#FF0000");
+						$(".reg input[name='username']").parent().next().next().text('用户名已存在').css("color","#FF0000");
 					}
 				},
 				error:function(){alert("请求失败");}
@@ -35,7 +35,7 @@ $(function(){
 	});
 	
 	//验证密码
-	$('input[name="pwd"]').focus(function(){
+	$('.reg input[name="pwd"]').focus(function(){
 		$(this).parent().next().next().text('请输入8-15位的密码').css("color","#000");
 	})
 	.blur(function() {
@@ -54,7 +54,7 @@ $(function(){
 		}
 	});
 	//验证确认密码
-	$('input[name="pwd2"]').focus(function(){
+	$('.reg input[name="pwd2"]').focus(function(){
 		$(this).parent().next().next().text('请输入同上规则的密码').css("color","#000");
 	})
 	.blur(function(){
@@ -72,7 +72,7 @@ $(function(){
 		}
 	});
 	//验证邮箱
-	$('input[name="email"]').focus(function(){
+	$('.reg input[name="email"]').focus(function(){
 		$(this).parent().next().next().text('请输入你常用的邮箱地址').css("color","#000");
 	})
 	.blur(function(){

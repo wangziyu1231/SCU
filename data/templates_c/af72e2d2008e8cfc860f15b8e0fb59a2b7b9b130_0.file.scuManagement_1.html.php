@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-26 12:18:36
+/* Smarty version 3.1.30, created on 2017-10-25 17:38:33
   from "F:\xampp\htdocs\SCU\tpls\admin\scuManagement_1.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ca297c207212_95736770',
+  'unifunc' => 'content_59f0aff91c4312_58720096',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:admin/scuManagement_1_1.html' => 2,
   ),
 ),false)) {
-function content_59ca297c207212_95736770 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59f0aff91c4312_58720096 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">

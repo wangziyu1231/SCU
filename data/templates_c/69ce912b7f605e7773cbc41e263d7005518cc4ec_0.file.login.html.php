@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-26 12:20:33
+/* Smarty version 3.1.30, created on 2017-10-25 17:37:41
   from "F:\xampp\htdocs\SCU\tpls\main\login.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ca29f1e8c310_03899468',
+  'unifunc' => 'content_59f0afc527d4b8_76465857',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69ce912b7f605e7773cbc41e263d7005518cc4ec' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\main\\login.html',
-      1 => 1504620666,
+      1 => 1506526259,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59ca29f1e8c310_03899468 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59f0afc527d4b8_76465857 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="back_mark"></div>
 
@@ -40,7 +40,7 @@ function content_59ca29f1e8c310_03899468 (Smarty_Internal_Template $_smarty_tpl)
 
             <div class="check_id">
                 <input type="text" placeholder="验证码" class="check_text" id="check_text" name="check_text">
-                <img id="checkedImage" src="main.php?controller=login&method=getCheckedImage" onclick="getCheckedImage()"/> 
+                <img id="checkedImage" src="main.php?controller=login&method=getCheckedImage" /> 
             </div>
 
             <div class="rem_psd">
@@ -48,7 +48,7 @@ function content_59ca29f1e8c310_03899468 (Smarty_Internal_Template $_smarty_tpl)
                 <a>忘记密码?</a>
             </div>
 
-            <input type="submit" value="登录" class="login_btn" onclick="check_str()"/><br />
+            <input type="submit" value="登录" class="login_btn" /><br />
     </div>
 </div>
 <?php }

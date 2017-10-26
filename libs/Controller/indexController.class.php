@@ -222,6 +222,16 @@
 			else{
 				VIEW::_assign('isConcern','0');
 			}
+
+			//获取活动列表
+			//url解码获取社团号sNO
+			$url_info = geturl($_SERVER['QUERY_STRING'],'SCU');
+			$sNO = isset($url_info['sNO'])?$url_info['sNO']:'3';
+			// VIEW::_assign("sNO",$sNO);
+			$getSocActMod = M('getSocietyAct');
+			$arr_act = $getSocActMod->getSocAct($sNO);
+			VIEW::_assign('arr_act',$arr_act);
+
 			VIEW::_assign("url_aboutUs","index.html?".encrypt_url("controller=index&method=showAboutUs",'SCU'));
 			VIEW::_assign("url_information","index.html?".encrypt_url("controller=index&method=information",'SCU'));
 			VIEW::_assign("url_contactUs","index.html?".encrypt_url("controller=index&method=contactUs",'SCU'));
@@ -268,10 +278,10 @@
 			$sNO = isset($url_info['sNO'])?$url_info['sNO']:'3';
 			VIEW::_assign("sNO",$sNO);
 			//获取评论
-			$comment = M('comment');
-			$result_comment = $comment->getAll($sNO);
-			if($result_comment)
-				VIEW::_assign('comment_arr',$result_comment);
+			// $comment = M('comment');
+			// $result_comment = $comment->getAll($sNO);
+			// if($result_comment)
+			// 	VIEW::_assign('comment_arr',$result_comment);
 			
 			VIEW::_assign("url_aboutUs","index.html?".encrypt_url("controller=index&method=showAboutUs",'SCU'));
 			VIEW::_assign("url_information","index.html?".encrypt_url("controller=index&method=information",'SCU'));

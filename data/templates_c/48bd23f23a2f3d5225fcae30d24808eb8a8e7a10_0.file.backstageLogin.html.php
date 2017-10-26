@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-09-26 12:18:21
+/* Smarty version 3.1.30, created on 2017-10-25 17:38:25
   from "F:\xampp\htdocs\SCU\tpls\admin\backstageLogin.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59ca296d69bb36_89285016',
+  'unifunc' => 'content_59f0aff1c07368_41382227',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48bd23f23a2f3d5225fcae30d24808eb8a8e7a10' => 
     array (
       0 => 'F:\\xampp\\htdocs\\SCU\\tpls\\admin\\backstageLogin.html',
-      1 => 1502456248,
+      1 => 1507809830,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59ca296d69bb36_89285016 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59f0aff1c07368_41382227 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@ function content_59ca296d69bb36_89285016 (Smarty_Internal_Template $_smarty_tpl)
  src="./img/js/admin/adminLogin.js"><?php echo '</script'; ?>
 >
 </head>
-<body >
+<body onkeydown="keyDown();">
 		<header></header>
 		<article>
 				<div class="left">
@@ -53,12 +53,12 @@ function content_59ca296d69bb36_89285016 (Smarty_Internal_Template $_smarty_tpl)
 						<div class="formIpt">
 							<span class="tips" id="tips_a"></span>		
 
-							<div class="imgUser"><input type="text" class="user" name="username" id="username_a" placeholder="请输入用户名"/><img type="image" src="./img/images/x.png" alt="reset" class="reset" onclick="reset_a()"/></div>							
+							<div class="imgUser"><input type="text" class="user" name="username" id="username_a" placeholder="请输入用户名" onkeydown="keyDown()"/><img type="image" src="./img/images/x.png" alt="reset" class="reset" onclick="reset_a()"/></div>							
 							
-							<div class="imgPwd"><input type="password" class="psd" name="password" id="password_a" placeholder="请输入密码" autocomplete="new-password" /></div>										
+							<div class="imgPwd"><input type="password" class="psd" name="password" id="password_a" placeholder="请输入密码" autocomplete="new-password" onkeydown="keyDown()"/></div>										
 													
 						</div>
-						<div class="loginBtn"><input type="submit" value="登录" name="auto_login" class="login_btn" onclick="check_a()"/><br />
+						<div class="loginBtn1"><input id="loginBtn1" type="submit" value="登录" name="auto_login" class="login_btn" onclick="check_a()"/><br />
 						</div>
 					</div>
 					
@@ -74,7 +74,7 @@ function content_59ca296d69bb36_89285016 (Smarty_Internal_Template $_smarty_tpl)
 							<div class="imgPwd"><input type="password" class="psd" name="admin_pwd" id="password_b" placeholder="请输入密码"/></div>										
 												
 						</div>
-						<div class="loginBtn"><input type="submit" value="登录" class="login_btn" onclick="check_b()"/><br />
+						<div class="loginBtn2"><input type="submit" value="登录" class="login_btn" onclick="check_b()"/><br />
 						</div>
 					</div>
 					

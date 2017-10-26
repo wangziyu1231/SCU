@@ -107,3 +107,10 @@ function check_b(){
 		$('#tips_b').text("请输入用户名").css("color","#FF0000");
 	}
 }
+
+function keyDown(){
+	var event = window.event || event;
+	if(event.keyCode == 13){
+		document.getElementById("loginBtn1").click()||document.getElementById("loginBtn2").click();
+	}
+}

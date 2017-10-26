@@ -9,7 +9,7 @@
 				$this->sNO =  intval($_POST['sNO']);
 				//DB查询 是否存在 即该用户是否已加入社团
 			else{
-				require_once('/../../framework/function/url_encode.php');
+				require_once('../framework/function/url_encode.php');
 				$url_info = geturl($_SERVER['QUERY_STRING'],'SCU');//接收所有参数
 				$this->sNO = $url_info['sNO'];
 			}

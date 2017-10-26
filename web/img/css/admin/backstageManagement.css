@@ -70,7 +70,7 @@ hr{
 }
 .right{
 	width: 96%;
-	min-width: 50rem
+	min-width: 40rem;
 	height: 55rem;
 	background: #eeeced;
 	/* float: left; */
@@ -79,7 +79,7 @@ hr{
 }
 .rightIfo{
 	margin-left: 1.5rem;
-	width: 90%;
+	/* width: 90%; */
 }
 
 .manageNav{
@@ -172,7 +172,8 @@ hr{
 	
 } 
 .searchContent #btn{
-	margin-right: 15%;
+	position: absolute;
+	left: 42rem;
 	width: 4rem;
 	height: 2rem;
 	border: 1px solid #ddd;
@@ -275,15 +276,16 @@ table tr td a{
 	margin:1% 0 0 2.5%;
 }
 .searchIframe{
-	width: 99.9%;
+	/* width: 99.9%; */
+	min-width: 25rem;
 	height: 8rem;
 	background: #fff;
 	border: 1px solid #ccc;
 	border-top: 0;
 
 }
-.searchIframe form span{
-	margin-left: 4rem;
+.department .sIpt{
+	margin-left: -13rem;
 }
 form input{
 	margin-left: 2rem;
@@ -312,6 +314,9 @@ form.sIpt2{
 	border-radius: 0.2rem;
 	background: #99ccff;
 	font-size: 1rem;
+	position: relative;
+	left: 5rem;
+	top: 2rem;
 		}
 .allSBtn{
 	margin-top: 4rem;
